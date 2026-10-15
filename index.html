@@ -1,0 +1,1533 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Mohamed Emad - Student Researcher | Embedded Systems & AI</title>
+<meta name="description" content="Student research and engineering portfolio of Mohamed Emad, Grade 11 at El Minya STEM School, Egypt." />
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: { zinc: { 850: '#20242c' } },
+      fontFamily: {
+        sans: ['"Plus Jakarta Sans"','Inter','-apple-system','BlinkMacSystemFont','sans-serif'],
+        mono: ['"JetBrains Mono"','ui-monospace','SFMono-Regular','Menlo','monospace'],
+      }
+    }
+  }
+}
+</script>
+<script src="https://unpkg.com/lucide@0.475.0/dist/umd/lucide.min.js"></script>
+
+<style>
+  html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+  body { font-feature-settings: "cv02","cv03","cv04","cv11"; }
+  ::selection { background: rgba(245,158,11,.2); color: #b45309; }
+  html.dark ::selection { color: #fcd34d; }
+  ::-webkit-scrollbar { width: 7px; height: 7px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: rgba(140,140,150,.25); border-radius: 9999px; }
+  ::-webkit-scrollbar-thumb:hover { background: rgba(140,140,150,.45); }
+
+  .subtle-border { border: 1px solid rgb(228 228 231); }
+  html.dark .subtle-border { border-color: rgba(39 39 42 / .8); }
+  .editorial-card { background: #fff; border: 1px solid rgb(228 228 231); transition: all .2s ease; }
+  html.dark .editorial-card { background: rgba(24 24 27 / .7); border-color: rgba(39 39 42 / .8); }
+  .editorial-card:hover { border-color: rgb(212 212 216); box-shadow: 0 1px 2px rgba(0,0,0,.05); }
+  html.dark .editorial-card:hover { border-color: rgb(63 63 70); }
+
+  .overlay { transition: opacity .2s ease; }
+  .overlay.hidden-anim { opacity: 0; pointer-events: none; }
+  .overlay.hidden-anim .modal-panel { transform: translateY(12px) scale(.985); opacity: 0; }
+  .modal-panel { transition: transform .2s ease, opacity .2s ease; }
+  .drawer-panel { transition: transform .25s ease; }
+  .overlay.hidden-anim .drawer-panel { transform: translateX(100%); }
+
+  .redacted-bar { background-color: currentColor; color: inherit; border-radius: 2px; user-select: none; display: inline-block; }
+  .dot-grid { background-image: radial-gradient(circle at 1px 1px, currentColor 1px, transparent 0); background-size: 24px 24px; }
+  .line-clamp-1 { overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 1; }
+  .tab-on { background: #18181b !important; color: #fff !important; }
+  html.dark .tab-on { background: #f4f4f5 !important; color: #09090b !important; }
+  .fade-in { animation: fadeUp .45s ease both; }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+</style>
+</head>
+
+<body class="bg-zinc-50 text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100 font-sans antialiased selection:bg-amber-500/20 selection:text-amber-700 dark:selection:text-amber-300">
+
+<!-- ================= NAVBAR ================= -->
+<header id="navbar" class="fixed top-0 left-0 right-0 z-40 transition-all duration-200 border-b border-transparent">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+    <a href="#top" class="flex items-center gap-3 group">
+      <div class="w-9 h-9 rounded-md bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900 flex items-center justify-center font-bold text-sm tracking-tight transition-transform group-hover:scale-105">ME</div>
+      <div>
+        <div class="font-bold text-sm tracking-tight flex items-center gap-2">Mohamed Emad
+          <span class="hidden sm:inline-flex text-[10px] font-mono font-medium px-1.5 py-0.5 rounded bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 border border-zinc-200 dark:border-zinc-700">Grade 11</span>
+        </div>
+        <div class="text-[11px] text-zinc-700 dark:text-zinc-300 font-medium">El Minya STEM School</div>
+      </div>
+    </a>
+    <nav class="hidden md:flex items-center gap-6" id="navLinks"></nav>
+    <div class="flex items-center gap-2.5">
+      <button onclick="openDrawer()" title="Reviewer Transparency & Fact-Check Sheet"
+        class="hidden sm:flex items-center gap-1.5 text-xs font-medium px-2.5 py-1.5 rounded-md bg-amber-50 dark:bg-amber-950/40 text-amber-800 dark:text-amber-300 border border-amber-200/80 dark:border-amber-800/60 hover:bg-amber-100 dark:hover:bg-amber-900/40 transition-colors">
+        <i data-lucide="shield-check" class="w-3.5 h-3.5 text-amber-600 dark:text-amber-400"></i><span>Fact-Check Sheet</span>
+      </button>
+      <button onclick="toggleTheme()" aria-label="Toggle theme"
+        class="p-2 rounded-md text-zinc-700 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-zinc-100 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors">
+        <i data-lucide="moon" class="w-4 h-4 dark:hidden"></i>
+        <i data-lucide="sun" class="w-4 h-4 hidden dark:block"></i>
+      </button>
+      <button onclick="toggleMobileMenu()" class="md:hidden p-2 rounded-md text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800" aria-label="Menu">
+        <i data-lucide="menu" class="w-5 h-5" id="mobileMenuIcon"></i>
+      </button>
+    </div>
+  </div>
+  <div id="mobileMenu" class="md:hidden hidden bg-white dark:bg-zinc-950 border-b border-zinc-200 dark:border-zinc-800 px-4 pt-2 pb-6 shadow-lg"></div>
+</header>
+
+<main id="top">
+
+<!-- ================= HERO ================= -->
+<section class="relative pt-28 pb-16 sm:pt-36 sm:pb-24 border-b border-zinc-200/80 dark:border-zinc-800/80 overflow-hidden">
+  <div aria-hidden="true" class="absolute inset-0 opacity-[0.03] dark:opacity-[0.05] pointer-events-none dot-grid text-zinc-900 dark:text-zinc-100"></div>
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 relative">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 items-center">
+      <div class="lg:col-span-7 flex flex-col items-start text-left fade-in">
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-zinc-100 dark:bg-zinc-850 border border-zinc-200 dark:border-zinc-700/80 text-xs text-zinc-700 dark:text-zinc-300 font-medium mb-6">
+          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+          <span>Grade 11 Student Researcher</span>
+          <span class="text-zinc-400 dark:text-zinc-600">•</span>
+          <span class="flex items-center gap-1 text-zinc-800 dark:text-zinc-200"><i data-lucide="map-pin" class="w-3 h-3 text-amber-600 dark:text-amber-400"></i>El Minya STEM School, Egypt</span>
+        </div>
+        <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight mb-3">Mohamed Emad</h1>
+        <p class="text-base sm:text-xl font-semibold text-amber-800 dark:text-amber-400/90 tracking-tight mb-5">Student Researcher | Embedded Systems & AI | STEM Education</p>
+        <p class="text-sm sm:text-base text-zinc-700 dark:text-zinc-300 leading-relaxed mb-6 max-w-xl">
+          I am an 11th-grade high school student exploring technical problems in embedded sensor integration, signal variability,
+          and multi-agent simulation. Working alongside school teammates, I build hardware-software prototypes, test hypotheses
+          through computer simulation, and facilitate open STEM workshops to help peer students access practical electronics education.
+        </p>
+        <div class="flex flex-wrap gap-2 mb-8" id="heroChips"></div>
+        <div class="flex flex-wrap items-center gap-3 w-full sm:w-auto">
+          <a href="#projects" class="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-md bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-950 font-medium text-xs tracking-tight hover:bg-zinc-800 dark:hover:bg-white transition-all">
+            <span>Explore Featured Projects</span><i data-lucide="arrow-down" class="w-3.5 h-3.5"></i>
+          </a>
+          <a href="#evidence" class="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-md bg-white dark:bg-zinc-900 text-zinc-800 dark:text-zinc-200 subtle-border hover:bg-zinc-50 dark:hover:bg-zinc-850 font-medium text-xs transition-colors">
+            <span>Evidence Repository</span><i data-lucide="external-link" class="w-3.5 h-3.5 text-zinc-500"></i>
+          </a>
+          <button onclick="openDrawer()" class="inline-flex items-center justify-center gap-1.5 px-3 py-2.5 rounded-md bg-amber-50 dark:bg-amber-950/40 text-amber-800 dark:text-amber-300 border border-amber-200 dark:border-amber-800/60 hover:bg-amber-100 font-medium text-xs transition-colors">
+            <i data-lucide="shield-check" class="w-3.5 h-3.5 text-amber-600 dark:text-amber-400"></i><span>Fact-Check Sheet</span>
+          </button>
+        </div>
+        <div class="mt-8 pt-4 border-t border-zinc-200 dark:border-zinc-800/80 w-full flex items-center gap-2 text-[11px] text-zinc-700 dark:text-zinc-300">
+          <i data-lucide="shield-check" class="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0"></i>
+          <span><strong>Academic Integrity Pledge:</strong> All projects, team contributions, and competition standings are strictly verified against school records and submission documents. No fabricated statistics or claims.</span>
+        </div>
+      </div>
+      <div class="lg:col-span-5 flex flex-col items-center justify-center fade-in" style="animation-delay:.1s">
+        <div class="relative w-full max-w-sm">
+          <div class="relative p-2 rounded-xl bg-white dark:bg-zinc-900 subtle-border shadow-md">
+            <div class="aspect-[3/4] rounded-lg overflow-hidden relative bg-zinc-100 dark:bg-zinc-800">
+              <img src="assets/mohamed-emad.jpg" alt="Mohamed Emad, Grade 11 student at El Minya STEM School" class="w-full h-full object-cover object-top" style="filter:contrast(1.02)" loading="eager" />
+              <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/40 via-transparent to-transparent pointer-events-none"></div>
+              <div class="absolute bottom-3 left-3 right-3 p-2.5 rounded-md bg-zinc-950/80 backdrop-blur-md border border-white/10 text-white flex items-center justify-between">
+                <div><p class="text-xs font-semibold tracking-tight">Mohamed Emad</p><p class="text-[10px] text-zinc-300">Class of 2028 • El Minya STEM</p></div>
+                <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 border border-amber-400/30">Authentic Photo</span>
+              </div>
+            </div>
+          </div>
+          <div class="mt-3 p-3 rounded-lg bg-zinc-50 dark:bg-zinc-900/90 subtle-border flex items-center justify-between text-xs">
+            <div class="flex items-center gap-2"><div class="w-2 h-2 rounded-full bg-emerald-500"></div><span class="text-zinc-700 dark:text-zinc-300 font-medium">Ministry Enrollment:</span></div>
+            <span class="font-mono text-zinc-800 dark:text-zinc-200">2025/2026 – 2026/2027</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SECTION 1: PROJECTS ================= -->
+<section id="projects" class="py-16 sm:py-24 border-b border-zinc-200/80 dark:border-zinc-800/80">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+    <div class="mb-10 text-left">
+      <div class="inline-flex items-center gap-1.5 text-xs font-mono uppercase tracking-wider text-amber-800 dark:text-amber-400 font-bold mb-2">
+        <i data-lucide="cpu" class="w-3.5 h-3.5"></i><span>Section 1 — Research & Prototyping</span>
+      </div>
+      <h2 class="text-2xl sm:text-4xl font-extrabold tracking-tight mb-3">Featured Projects & Investigations</h2>
+      <p class="text-xs sm:text-sm text-zinc-700 dark:text-zinc-300 max-w-2xl leading-relaxed">
+        Exploring reliability in bio-acoustic sensors, hands-free assistive hardware, multi-agent traffic simulation,
+        and environmental monitoring. Every project explicitly outlines team roles, hardware stacks, and active limitations.
+      </p>
+      <div class="flex flex-wrap gap-2 mt-6" id="projectTabs"></div>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="projectsGrid"></div>
+  </div>
+</section>
+
+<!-- ================= SECTION 2: AWARDS ================= -->
+<section id="awards" class="py-16 sm:py-24 border-b border-zinc-200/80 dark:border-zinc-800/80">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+    <div class="mb-10 text-left">
+      <div class="inline-flex items-center gap-1.5 text-xs font-mono uppercase tracking-wider text-amber-800 dark:text-amber-400 font-bold mb-2">
+        <i data-lucide="trophy" class="w-3.5 h-3.5"></i><span>Honors & Recognitions</span>
+      </div>
+      <h2 class="text-2xl sm:text-4xl font-extrabold tracking-tight mb-3">Awards, Finalist Standings & Academic Competitions</h2>
+      <p class="text-xs sm:text-sm text-zinc-700 dark:text-zinc-300 max-w-2xl leading-relaxed">
+        Every entry is strictly categorized to distinguish confirmed championship placements from competitive finalist status
+        and verified academic participation. Unconfirmed claims are flagged with review tags.
+      </p>
+      <div class="mt-4 p-3.5 rounded-lg bg-zinc-100 dark:bg-zinc-900/60 subtle-border flex items-start gap-2.5 max-w-3xl">
+        <i data-lucide="shield-check" class="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0 mt-0.5"></i>
+        <div class="text-[11px] text-zinc-700 dark:text-zinc-300 leading-relaxed">
+          <strong class="text-zinc-900 dark:text-zinc-100 font-medium">Anti-Inflation Standard:</strong>
+          Competition participation is never labeled as a victory; finalist designations (such as IEEE YESIST12 top 5%) reflect
+          qualifying rounds rather than 1st place awards; school milestones are separated from national olympiads.
+        </div>
+      </div>
+    </div>
+    <div class="space-y-10" id="awardsGroups"></div>
+  </div>
+</section>
+
+<!-- ================= SECTION 3: LEADERSHIP ================= -->
+<section id="leadership" class="py-16 sm:py-24 border-b border-zinc-200/80 dark:border-zinc-800/80 bg-zinc-50/50 dark:bg-zinc-950/30">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+    <div class="mb-12 text-left">
+      <div class="inline-flex items-center gap-1.5 text-xs font-mono uppercase tracking-wider text-amber-800 dark:text-amber-400 font-bold mb-2">
+        <i data-lucide="graduation-cap" class="w-3.5 h-3.5"></i><span>Student Initiatives & Mentorship</span>
+      </div>
+      <h2 class="text-2xl sm:text-4xl font-extrabold tracking-tight mb-3">Educational Leadership & Science Communication</h2>
+      <p class="text-xs sm:text-sm text-zinc-700 dark:text-zinc-300 max-w-2xl leading-relaxed">
+        Co-founding peer initiatives, developing hands-on electronics roadmaps with virtual labs, and interviewing senior
+        graduates to help secondary students transition into STEM inquiry.
+      </p>
+    </div>
+    <div id="mecFlagship"></div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="leadershipGrid"></div>
+  </div>
+</section>
+
+<!-- ================= SECTION 4: TIMELINE ================= -->
+<section id="timeline" class="py-16 sm:py-24 border-b border-zinc-200/80 dark:border-zinc-800/80">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+    <div class="mb-10 text-left">
+      <div class="inline-flex items-center gap-1.5 text-xs font-mono uppercase tracking-wider text-amber-800 dark:text-amber-400 font-bold mb-2">
+        <i data-lucide="clock" class="w-3.5 h-3.5"></i><span>Chronological Progress</span>
+      </div>
+      <h2 class="text-2xl sm:text-4xl font-extrabold tracking-tight mb-3">Research, Competition & Academic Timeline</h2>
+      <p class="text-xs sm:text-sm text-zinc-700 dark:text-zinc-300 max-w-2xl leading-relaxed">
+        A chronological trajectory distinguishing school-level science fairs from national qualifiers and international finalist evaluations.
+      </p>
+      <div class="flex flex-wrap gap-2 mt-6" id="timelineTabs"></div>
+    </div>
+    <div class="relative pl-6 sm:pl-8 border-l-2 border-zinc-200 dark:border-zinc-800 space-y-8 sm:space-y-10 text-left" id="timelineList"></div>
+  </div>
+</section>
+
+<!-- ================= SECTION 5: SKILLS ================= -->
+<section id="skills" class="py-16 sm:py-24 border-b border-zinc-200/80 dark:border-zinc-800/80 bg-zinc-50/50 dark:bg-zinc-950/40">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+    <div class="mb-10 text-left">
+      <div class="inline-flex items-center gap-1.5 text-xs font-mono uppercase tracking-wider text-amber-800 dark:text-amber-400 font-bold mb-2">
+        <i data-lucide="terminal" class="w-3.5 h-3.5"></i><span>Applied Technical Competencies</span>
+      </div>
+      <h2 class="text-2xl sm:text-4xl font-extrabold tracking-tight mb-3">Technical Skills & Applied Research Tooling</h2>
+      <p class="text-xs sm:text-sm text-zinc-700 dark:text-zinc-300 max-w-2xl leading-relaxed">
+        In place of arbitrary percentage progress bars or unverified "expert" ratings, each tool is framed strictly by where
+        and how it was applied in actual secondary student research, physical prototypes, or workshop delivery.
+      </p>
+      <div class="mt-4 p-3 rounded-lg bg-white dark:bg-zinc-900 subtle-border flex items-center gap-2 max-w-2xl text-[11px] text-zinc-700 dark:text-zinc-300">
+        <i data-lucide="shield-check" class="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0"></i>
+        <span><strong>Honest Evaluation:</strong> Self-directed student exploration and team capstone application. No professional industry experience claimed.</span>
+      </div>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="skillsGrid"></div>
+  </div>
+</section>
+
+<!-- ================= SECTION 7: EVIDENCE ================= -->
+<section id="evidence" class="py-16 sm:py-24 border-b border-zinc-200/80 dark:border-zinc-800/80">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+    <div class="mb-10 text-left">
+      <div class="inline-flex items-center gap-1.5 text-xs font-mono uppercase tracking-wider text-amber-800 dark:text-amber-400 font-bold mb-2">
+        <i data-lucide="file-text" class="w-3.5 h-3.5"></i><span>Documents & Artifacts</span>
+      </div>
+      <h2 class="text-2xl sm:text-4xl font-extrabold tracking-tight mb-3">Primary Evidence & Academic Verification</h2>
+      <p class="text-xs sm:text-sm text-zinc-700 dark:text-zinc-300 max-w-2xl leading-relaxed">
+        Every entry in this portfolio is linked to primary documentation. Each artifact explicitly states what it verifies,
+        along with clear boundaries on what it does not establish.
+      </p>
+      <div class="flex flex-wrap gap-2 mt-6" id="evidenceTabs"></div>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="evidenceGrid"></div>
+  </div>
+</section>
+
+<!-- ================= SECTION 8: ABOUT ================= -->
+<section id="about" class="py-16 sm:py-24 border-b border-zinc-200/80 dark:border-zinc-800/80 bg-zinc-50/50 dark:bg-zinc-950/40">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+    <div class="mb-12 text-left">
+      <div class="inline-flex items-center gap-1.5 text-xs font-mono uppercase tracking-wider text-amber-800 dark:text-amber-400 font-bold mb-2">
+        <i data-lucide="user" class="w-3.5 h-3.5"></i><span>Academic Background</span>
+      </div>
+      <h2 class="text-2xl sm:text-4xl font-extrabold tracking-tight mb-3">About Mohamed Emad</h2>
+      <p class="text-xs sm:text-sm text-zinc-700 dark:text-zinc-300 max-w-2xl leading-relaxed">
+        A reflection on learning, testing hardware and simulation models, and supporting peers through collaborative STEM education.
+      </p>
+    </div>
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      <div class="lg:col-span-7 space-y-5 text-left text-xs sm:text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed">
+        <p>I am currently in Grade 11 at <strong>El Minya STEM School</strong> in Egypt. My interest in engineering developed not through abstract theory, but through the discipline of troubleshooting physical circuits, evaluating sensor noise, and discovering why an initial design rarely functions as expected on the first test bench.</p>
+        <p>My research explorations center on two complementary areas: <strong>embedded sensor integration</strong> and <strong>multi-agent traffic simulation</strong>. In projects like <em>GULP</em>, I examine whether signal processing can isolate measurement artifacts in wearable bio-sensors; in <em>BASIRA</em>, my teammates and I prototyped a chest-worn assistive obstacle detector using an ESP32 and discrete ultrasonic sensing. In <em>OptiWay</em>, I turned to computer simulation in SUMO to model collective routing dynamics and evaluate emergency ambulance transit times across New Minya City.</p>
+        <p>Equally central to my high school experience is <strong>peer STEM education</strong>. Many eager secondary students across Egypt lack direct access to physical microcontrollers or laboratory kits. Through founding the <strong>MEC Club</strong> and developing the <em>MEC STEM Hub</em>, I helped structure virtual Tinkercad workshops where students can build, code, and simulate circuits online at zero financial barrier.</p>
+        <div class="p-4 rounded-xl bg-white dark:bg-zinc-900 subtle-border space-y-2">
+          <span class="text-xs font-mono font-bold uppercase tracking-wider text-zinc-900 dark:text-zinc-100 block">Current Learning Trajectory:</span>
+          <p class="text-xs text-zinc-700 dark:text-zinc-300">I do not consider myself a finished engineer or a medical researcher. I am an active high school student building scientific rigor, learning from experimental setbacks, refining my coding and statistical practices, and preparing for demanding university-level research in computer science and embedded systems.</p>
+        </div>
+      </div>
+      <div class="lg:col-span-5 space-y-4">
+        <div class="editorial-card rounded-xl overflow-hidden subtle-border shadow-xs text-left">
+          <div class="aspect-[4/3] bg-zinc-100 dark:bg-zinc-800 overflow-hidden relative">
+            <img src="assets/mohamed-campus.jpg" alt="Mohamed Emad on campus" class="w-full h-full object-cover" />
+          </div>
+          <div class="p-4 bg-white dark:bg-zinc-900">
+            <p class="text-xs font-bold text-zinc-900 dark:text-zinc-100">STEM Campus Environment</p>
+            <p class="text-[11px] text-zinc-700 dark:text-zinc-300 mt-0.5">Balancing rigorous curriculum requirements with laboratory prototyping and team collaborations.</p>
+          </div>
+        </div>
+        <div class="p-4 rounded-xl bg-amber-50/50 dark:bg-amber-950/20 border border-amber-200/70 dark:border-amber-800/50 text-left">
+          <p class="text-xs font-mono text-amber-800 dark:text-amber-400 font-bold mb-1">Guiding Academic Philosophy</p>
+          <blockquote class="text-xs text-zinc-700 dark:text-zinc-300 italic leading-relaxed">"Education is not preparation for life; education is life itself."</blockquote>
+          <span class="text-[10px] font-mono text-zinc-700 dark:text-zinc-300 block mt-1">— John Dewey (Inscribed at El Minya STEM entrance)</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SECTION 9: CONTACT ================= -->
+<section id="contact" class="py-16 sm:py-24 border-b border-zinc-200/80 dark:border-zinc-800/80">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+    <div class="mb-12 text-left">
+      <div class="inline-flex items-center gap-1.5 text-xs font-mono uppercase tracking-wider text-amber-800 dark:text-amber-400 font-bold mb-2">
+        <i data-lucide="mail" class="w-3.5 h-3.5"></i><span>Academic Correspondence</span>
+      </div>
+      <h2 class="text-2xl sm:text-4xl font-extrabold tracking-tight mb-3">Contact & Academic Inquiries</h2>
+      <p class="text-xs sm:text-sm text-zinc-700 dark:text-zinc-300 max-w-2xl leading-relaxed">
+        Open for dialogue regarding secondary student research collaborations, international STEM exchange programs, or academic mentorship inquiries.
+      </p>
+    </div>
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 text-left">
+      <div class="lg:col-span-5 space-y-4">
+        <div class="editorial-card rounded-xl p-5 subtle-border">
+          <span class="text-[11px] font-mono text-zinc-700 dark:text-zinc-300 font-semibold uppercase tracking-wider block mb-1">Official Institutional Email</span>
+          <a href="mailto:Mohamed.2625023@stemelmenya.moe.edu.eg" class="text-xs sm:text-sm font-mono font-bold text-amber-800 dark:text-amber-400 hover:underline break-all block">Mohamed.2625023@stemelmenya.moe.edu.eg</a>
+          <span class="text-[10px] text-zinc-600 dark:text-zinc-400 block mt-1">Issued by Egyptian Ministry of Education STEM Directorate</span>
+        </div>
+        <div class="editorial-card rounded-xl p-5 subtle-border space-y-2">
+          <div class="flex items-center gap-2 text-xs font-bold text-zinc-900 dark:text-zinc-100">
+            <i data-lucide="map-pin" class="w-4 h-4 text-amber-600 dark:text-amber-400"></i><span>El Minya STEM High School</span>
+          </div>
+          <p class="text-xs text-zinc-700 dark:text-zinc-300 leading-relaxed">New Minya City, Minya Governorate, Egypt.<br/>Secondary Stage (Grade 11, Academic Year 2026/2027).</p>
+        </div>
+        <div class="editorial-card rounded-xl p-5 subtle-border">
+          <span class="text-[11px] font-mono text-zinc-700 dark:text-zinc-300 font-semibold uppercase tracking-wider block mb-3">Digital Presence & Project Repositories</span>
+          <div class="space-y-2.5">
+            <a href="https://mecstemhub.netlify.app/" target="_blank" rel="noopener noreferrer" class="p-2.5 rounded-lg bg-zinc-50 dark:bg-zinc-950/50 subtle-border flex items-center justify-between text-xs hover:border-amber-400/50 transition-colors">
+              <div class="flex items-center gap-2">
+                <i data-lucide="globe" class="w-4 h-4 text-amber-800 dark:text-amber-400"></i>
+                <div><p class="font-bold text-zinc-900 dark:text-zinc-100">MEC STEM Hub</p><p class="text-[10px] text-zinc-600 dark:text-zinc-400">mecstemhub.netlify.app</p></div>
+              </div>
+              <span class="text-[10px] font-mono text-amber-800 dark:text-amber-400">Live ↗</span>
+            </a>
+            <div class="p-2.5 rounded-lg bg-zinc-50 dark:bg-zinc-950/50 subtle-border flex items-center justify-between text-xs">
+              <div class="flex items-center gap-2">
+                <i data-lucide="github" class="w-4 h-4 text-zinc-600 dark:text-zinc-400"></i>
+                <div><p class="font-bold text-zinc-900 dark:text-zinc-100">GitHub Profile</p><p class="text-[10px] text-zinc-600 dark:text-zinc-400 font-mono">github.com/[to be linked by Mohamed]</p></div>
+              </div>
+              <span class="text-[10px] font-mono text-zinc-600 dark:text-zinc-400">Placeholder</span>
+            </div>
+            <div class="p-2.5 rounded-lg bg-zinc-50 dark:bg-zinc-950/50 subtle-border flex items-center justify-between text-xs">
+              <div class="flex items-center gap-2">
+                <i data-lucide="linkedin" class="w-4 h-4 text-zinc-600 dark:text-zinc-400"></i>
+                <div><p class="font-bold text-zinc-900 dark:text-zinc-100">LinkedIn</p><p class="text-[10px] text-zinc-600 dark:text-zinc-400 font-mono">linkedin.com/in/[to be linked by Mohamed]</p></div>
+              </div>
+              <span class="text-[10px] font-mono text-zinc-600 dark:text-zinc-400">Placeholder</span>
+            </div>
+            <div class="p-2.5 rounded-lg bg-zinc-50 dark:bg-zinc-950/50 subtle-border flex items-center justify-between text-xs">
+              <div class="flex items-center gap-2">
+                <i data-lucide="youtube" class="w-4 h-4 text-zinc-600 dark:text-zinc-400"></i>
+                <div><p class="font-bold text-zinc-900 dark:text-zinc-100">MEC YouTube Channel</p><p class="text-[10px] text-zinc-600 dark:text-zinc-400 font-mono">youtube.com/@[to be linked by Mohamed]</p></div>
+              </div>
+              <span class="text-[10px] font-mono text-zinc-600 dark:text-zinc-400">Placeholder</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="lg:col-span-7">
+        <div class="editorial-card rounded-xl p-6 sm:p-8 subtle-border">
+          <h3 class="text-base sm:text-lg font-bold text-zinc-900 dark:text-zinc-50 mb-1">Send a Direct Academic Note</h3>
+          <p class="text-xs text-zinc-700 dark:text-zinc-300 mb-6">Messages are routed to Mohamed's student inbox. No commercial or marketing solicitations.</p>
+          <div id="contactFormWrap">
+            <form onsubmit="return submitContact(event)" class="space-y-4">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-xs font-mono text-zinc-700 dark:text-zinc-300 font-semibold mb-1">Your Name / Institution</label>
+                  <input type="text" required placeholder="e.g. Dr. / Program Reviewer" class="w-full text-xs p-2.5 rounded-md bg-zinc-50 dark:bg-zinc-950 subtle-border focus:outline-none focus:border-amber-500 text-zinc-900 dark:text-zinc-100" />
+                </div>
+                <div>
+                  <label class="block text-xs font-mono text-zinc-700 dark:text-zinc-300 font-semibold mb-1">Your Contact Email</label>
+                  <input type="email" required placeholder="reviewer@institution.edu" class="w-full text-xs p-2.5 rounded-md bg-zinc-50 dark:bg-zinc-950 subtle-border focus:outline-none focus:border-amber-500 text-zinc-900 dark:text-zinc-100" />
+                </div>
+              </div>
+              <div>
+                <label class="block text-xs font-mono text-zinc-700 dark:text-zinc-300 font-semibold mb-1">Subject</label>
+                <input type="text" required placeholder="e.g. Research inquiry / Program evaluation" class="w-full text-xs p-2.5 rounded-md bg-zinc-50 dark:bg-zinc-950 subtle-border focus:outline-none focus:border-amber-500 text-zinc-900 dark:text-zinc-100" />
+              </div>
+              <div>
+                <label class="block text-xs font-mono text-zinc-700 dark:text-zinc-300 font-semibold mb-1">Message</label>
+                <textarea rows="4" required placeholder="Write your message or inquiry here..." class="w-full text-xs p-2.5 rounded-md bg-zinc-50 dark:bg-zinc-950 subtle-border focus:outline-none focus:border-amber-500 text-zinc-900 dark:text-zinc-100 leading-relaxed"></textarea>
+              </div>
+              <button type="submit" class="inline-flex items-center justify-center gap-2 w-full py-2.5 rounded-md bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-950 text-xs font-medium hover:bg-zinc-800 dark:hover:bg-zinc-200 transition-colors">
+                <i data-lucide="send" class="w-3.5 h-3.5"></i><span>Send Academic Inquiry</span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="py-12 bg-white dark:bg-zinc-950 border-t border-zinc-200 dark:border-zinc-850 text-left">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+    <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 pb-8 border-b border-zinc-100 dark:border-zinc-850">
+      <div>
+        <div class="flex items-center gap-2 mb-1">
+          <span class="font-bold text-sm text-zinc-900 dark:text-zinc-100">Mohamed Emad</span>
+          <span class="text-xs text-zinc-700 dark:text-zinc-300">• Grade 11 Student Researcher</span>
+        </div>
+        <p class="text-xs text-zinc-700 dark:text-zinc-300">El Minya STEM High School, Egypt. Expected Secondary Graduation: 2028.</p>
+      </div>
+      <div class="flex flex-wrap items-center gap-4 text-xs">
+        <a href="#projects" class="text-zinc-700 dark:text-zinc-300 hover:text-amber-700 dark:hover:text-amber-400">Projects</a>
+        <a href="#awards" class="text-zinc-700 dark:text-zinc-300 hover:text-amber-700 dark:hover:text-amber-400">Awards</a>
+        <a href="#evidence" class="text-zinc-700 dark:text-zinc-300 hover:text-amber-700 dark:hover:text-amber-400">Evidence</a>
+        <button onclick="openDrawer()" class="text-amber-800 dark:text-amber-400 font-medium hover:underline flex items-center gap-1">
+          <i data-lucide="shield-check" class="w-3.5 h-3.5"></i><span>Fact-Check Audit Sheet</span>
+        </button>
+      </div>
+    </div>
+    <div class="pt-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-[11px] text-zinc-700 dark:text-zinc-300">
+      <p>Designed with strict academic honesty: all results, prototypes, and team attributions verified.</p>
+      <p class="font-mono">Mohamed.2625023@stemelmenya.moe.edu.eg</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ================= PROJECT MODAL ================= -->
+<div id="projectOverlay" class="overlay hidden-anim fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-zinc-950/70" onclick="if(event.target===this) closeProjectModal()">
+  <div class="modal-panel relative w-full max-w-3xl max-h-[90vh] overflow-y-auto rounded-xl bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 shadow-2xl p-6 sm:p-8 text-left" onclick="event.stopPropagation()" id="projectModalContent"></div>
+</div>
+
+<!-- ================= EVIDENCE MODAL ================= -->
+<div id="evidenceOverlay" class="overlay hidden-anim fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-zinc-950/80" onclick="if(event.target===this) closeEvidenceModal()">
+  <div class="modal-panel relative w-full max-w-4xl max-h-[92vh] flex flex-col rounded-xl bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 shadow-2xl overflow-hidden text-left" onclick="event.stopPropagation()">
+    <div id="evidenceModalContent" class="flex flex-col flex-1 min-h-0"></div>
+  </div>
+</div>
+
+<!-- ================= REVIEW DRAWER ================= -->
+<div id="drawerOverlay" class="overlay hidden-anim fixed inset-0 z-50 flex justify-end bg-zinc-950/70" onclick="if(event.target===this) closeDrawer()">
+  <div class="drawer-panel w-full max-w-xl h-full bg-white dark:bg-zinc-900 border-l border-zinc-200 dark:border-zinc-800 shadow-2xl p-6 sm:p-8 overflow-y-auto text-left" onclick="event.stopPropagation()">
+    <div class="flex items-start justify-between gap-4 pb-4 mb-6 border-b border-zinc-200 dark:border-zinc-800">
+      <div class="flex items-center gap-2.5">
+        <div class="p-2 rounded-lg bg-amber-100 dark:bg-amber-950 text-amber-800 dark:text-amber-300"><i data-lucide="shield-check" class="w-5 h-5"></i></div>
+        <div>
+          <h3 class="text-lg font-bold text-zinc-900 dark:text-zinc-50">Reviewer Fact-Check Sheet</h3>
+          <p class="text-xs text-zinc-700 dark:text-zinc-300">Academic Integrity & Verification Transparency</p>
+        </div>
+      </div>
+      <button onclick="closeDrawer()" class="p-1.5 rounded-lg text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 hover:bg-zinc-100 dark:hover:bg-zinc-800"><i data-lucide="x" class="w-5 h-5"></i></button>
+    </div>
+    <div id="drawerContent"></div>
+  </div>
+</div>
+
+<script>
+/* ================================================================
+   DATA — mirrored 1:1 from the original site build
+================================================================ */
+const projectsData = [
+  {
+    id:"gulp", title:"GULP", subtitle:"Swallowing Measurement Reliability via Wearable Sensors",
+    field:"Embedded Systems & Signal Processing", statusBadge:"Research & Prototype Development", statusType:"ongoing",
+    summary:"Investigating whether acquisition-related variability in wearable swallowing sensors can be distinguished from natural physiological variability to automate measurement validity.",
+    featured:true, bannerImage:"assets/mohamed-campus.jpg",
+    tags:["Signal Processing","Sensor Reliability","Scientific Methodology","EISTEF Finalist"],
+    problem:"Wearable acoustic and mechanical sensors offer a non-invasive way to monitor swallowing biomechanics. However, acquisition variability caused by sensor displacement, skin impedance changes, or user motion often contaminates readings, making it difficult to distinguish true physiological variation from measurement artifact.",
+    researchQuestion:"Can sensor acquisition variability be mathematically separated from natural physiological swallowing variability, and can this distinction support an automated decision algorithm to accept or repeat a clinical measurement?",
+    myRole:["Formulating the core research direction and defining the research question","Conducting comprehensive literature review across biomedical sensing and signal processing papers","Structuring the data analysis pipeline and signal validation criteria","Authoring the scientific poster, research abstract, and presentation for academic jurors"],
+    teamRoles:[{name:"Mohamed Emad",role:"Research formulation, literature analysis, signal validation design, and poster authoring"},{name:"Omar",role:"Hardware prototyping, sensor assembly, and bench testing setup lead"}],
+    techStack:["Wearable Acoustic/Vibration Sensors","Digital Signal Processing (DSP)","Data Filtering & Feature Extraction","Python Analysis Pipeline","Scientific Poster Documentation"],
+    developmentStage:"Research & Prototype Development",
+    competitionStatus:"Advanced through local competition level; qualified for the in-person final of EISTEF (Egypt International Science and Technology Fair).",
+    juryFeedback:"Juror feedback emphasized that while the theoretical framework and analysis pipeline are solid, the methodology must be demonstrated on an active physical testing cohort.",
+    limitations:"Testing is currently incomplete. The reliability classification algorithm has not yet been validated on a formal clinical pilot cohort. Performance metrics remain theoretical until physical bench and participant data are fully gathered.",
+    nextSteps:["Refining the sensor mounting jig to minimize placement noise","Conducting structured bench tests with synthetic acoustic swallowing signals","Publishing a standardized dataset protocol for student-led bio-acoustic research"],
+    evidence:[{title:"EISTEF In-Person Finalist Qualification",type:"Competition Qualification",file:null,note:"Qualified for in-person final at local EISTEF competition stage."}]
+  },
+  {
+    id:"basira", title:"BASIRA", subtitle:"Chest-Worn Assistive Navigation for Visual Impairment",
+    field:"Assistive Technology & Embedded Systems", statusBadge:"IEEE YESIST12 Global Finalist (Top 5%)", statusType:"finalist",
+    summary:"A hands-free, chest-worn embedded assistive unit providing obstacle alerts and orientation feedback through earpiece audio rather than external speakers or canes.",
+    featured:true, bannerImage:"assets/mohamed-emad.jpg",
+    tags:["ESP32","Ultrasonic Sensing","MPU6050","IEEE YESIST12","Assistive Tech"],
+    problem:"Traditional mobility aids like long white canes require continuous arm exertion and cannot detect head-level or chest-level hazards. Furthermore, handheld devices with loud external speakers compromise user privacy and obscure critical ambient sounds.",
+    researchQuestion:"How can a lightweight, chest-worn sensor node provide intuitive, low-latency obstacle perception and emergency communication without impeding natural hearing or requiring continuous manual handling?",
+    myRole:["Co-developing the system architecture, hardware component selection, and firmware logic","Programming the ESP32 microcontroller routines for ultrasonic distance thresholds and MPU6050 motion state monitoring","Integrating DFPlayer Mini audio prompt dispatch and Telegram emergency alert trigger","Co-authoring project documentation and technical presentation for international engineering jurors"],
+    teamRoles:[{name:"Mohamed Emad",role:"System design, ESP32 firmware, sensor integration, and audio trigger programming"},{name:"Abdelrahman Shreef",role:"Co-developer, physical enclosure design, and wiring integration"},{name:"Rayka Mahmoud",role:"Project Mentor — engineering guidance and technical review"}],
+    techStack:["ESP32 Microcontroller","Ultrasonic Proximity Sensors (HC-SR04)","MPU6050 6-Axis Accelerometer/Gyroscope","DFPlayer Mini MP3 Audio Module","GPS Localization Module","Telegram Bot API via Wi-Fi","In-Ear Audio Feedback"],
+    developmentStage:"Functional Student Prototype",
+    competitionStatus:"Associated with IEEE YESIST12 2026 Junior Einstein track. Achieved Global Finalist status, reported by the team as ranking among the top 5% worldwide.",
+    juryFeedback:"Commended for hands-free chest ergonomic placement; suggested future iterations focus on power management, outdoor optical sensor redundancy, and real-world user trial documentation.",
+    limitations:"BASIRA is a student engineering prototype developed for competition. It is NOT clinically validated, medical-grade, or guaranteed to prevent collisions or accidents in unconstrained real-world traffic.",
+    nextSteps:["Transitioning from ultrasonic to low-power Time-of-Flight (ToF) LiDAR for narrower beam resolution","Designing a custom PCB to replace breadboard/prototyping wiring","Implementing sleep modes to improve battery life for daily wearability"],
+    evidence:[{title:"IEEE YESIST12 2026 Global Finalist Notice",type:"Competition Certificate / Announcement",file:null,placeholder:true,note:"Official certificate wording will be updated upon final release."}]
+  },
+  {
+    id:"optiway", title:"OptiWay", subtitle:"AI-Based Urban Traffic Optimization & Emergency Routing",
+    field:"Intelligent Transportation & Simulation", statusBadge:"School ISEF Research Fair Presentation", statusType:"completed",
+    summary:"A traffic simulation study testing collective routing algorithms in SUMO to mitigate selfish navigation and establish dynamic emergency corridors for ambulances.",
+    featured:true, bannerImage:"assets/mohamed-isef.jpg",
+    tags:["SUMO 1.17","Python 3.11","NumPy & SciPy","Traffic Simulation","ISEF Fair"],
+    problem:"Commercial navigation apps optimize for individual vehicles in isolation. This phenomenon ('selfish routing') funnels thousands of drivers into identical streets, worsening citywide congestion and trapping emergency ambulances where minutes dictate survival rates.",
+    researchQuestion:"Can multi-agent collective traffic coordination algorithms modeled on Egyptian urban layouts reduce mean travel duration and establish prioritized green corridors for verified emergency vehicles?",
+    myRole:["Sole primary researcher and author of the scientific investigation","Constructed virtual road network and traffic simulation of New Minya City using SUMO 1.17","Simulated 10,000 synthetic vehicles with documented Egyptian driving characteristics across 50 paired runs","Conducted statistical analyses (paired t-tests, travel duration, fuel consumption modeling) in Python using Pandas and SciPy","Designed and presented full scientific research poster at El Minya STEM School ISEF research fair"],
+    teamRoles:[{name:"Mohamed Emad Mohamed Ibrahim",role:"Primary Researcher, simulation developer, statistical analyst, and presenter"}],
+    techStack:["SUMO 1.17.0 (Simulation of Urban Mobility)","Python 3.11","Pandas 2.1.0 & NumPy 1.24.0","SciPy Statistical Library (Paired t-tests)","Egyptian Ministry of Transportation Baseline Data (2023)"],
+    developmentStage:"Completed Quantitative Simulation Study",
+    competitionStatus:"Presented at El Minya STEM School ISEF preliminary research competition.",
+    juryFeedback:"Recognized for thorough methodological framing and local infrastructure adaptation; recommended exploring physical roadside edge validation.",
+    limitations:"OptiWay's findings are based on computer simulations in SUMO and mathematical models, not physical road sensor networks or municipal fleet deployments.",
+    nextSteps:["Calibrating simulation parameters with physical camera telemetry from local intersections","Exploring low-bandwidth SMS/cellular gateway protocols for emergency vehicle authentication","Comparing multi-agent reinforcement learning routing against static Dijkstra algorithms"],
+    evidence:[
+      {title:"Official OptiWay Research Poster (Full PDF)",type:"Scientific Research Poster",file:"assets/FinalIseff.pdf",note:"Complete scientific poster presented at El Minya STEM School ISEF fair."},
+      {title:"Fair Presentation Photograph",type:"Event Evidence",file:"assets/mohamed-isef.jpg",note:"Mohamed presenting OptiWay at El Minya STEM School ISEF fair."}
+    ]
+  },
+  {
+    id:"aquapulse", title:"AquaPulse", subtitle:"Post-Treatment Rural Drinking Water Early Warning Network",
+    field:"Environmental Sensing & Water Quality", statusBadge:"GHLC Finalist", statusType:"finalist",
+    summary:"Exploring continuous multi-parameter sensor nodes to detect post-treatment water contamination in rural pipeline networks before water reaches household taps.",
+    featured:true, bannerImage:"assets/mohamed-campus.jpg",
+    tags:["ESP32","Water Quality","pH & Turbidity","GHLC Finalist","Environmental"],
+    problem:"In many rural areas, drinking water may be purified adequately at a central treatment facility but suffers contamination during transit through aged or compromised distribution piping before reaching residential taps.",
+    researchQuestion:"Can an array of distributed, low-cost sensor nodes placed along distribution pipes reliably detect sudden anomalies in pH, turbidity, and conductivity to alert village stakeholders prior to widespread consumption?",
+    myRole:["Defining the environmental research problem and evaluating rural water quality challenges","Selecting appropriate low-cost sensor probes (pH, EC, turbidity, temperature) and matching electrical interfaces","Developing firmware data-acquisition routines on the ESP32","Authoring competition submission documents for the Global Health Leaders Conference (GHLC)"],
+    teamRoles:[{name:"Mohamed Emad",role:"Research design, sensor selection, ESP32 data logging, and submission writing"},{name:"Student Collaborators",role:"Pending confirmation of exact co-author assignments"}],
+    techStack:["ESP32 Microcontroller","Analog pH Sensor Probe","Electrical Conductivity (EC) Sensor","Optical Turbidity Sensor","DS18B20 Waterproof Temperature Sensor","Local Flash Data Logging & Alert Thresholds"],
+    developmentStage:"Student Prototype & Laboratory Bench Testing",
+    competitionStatus:"Global Health Leaders Conference (GHLC) Finalist.",
+    juryFeedback:"Commended for targeting the post-treatment distribution gap; advised to consider sensor fouling and calibration drift in field conditions.",
+    limitations:"AquaPulse has NOT been deployed in municipal or rural public water networks. Bench sensor readings do not prove prevention of waterborne illnesses without long-term epidemiological and microbiological validation.",
+    nextSteps:["Testing anti-fouling coatings on optical turbidity sensors","Implementing calibration compensation curves for fluctuating water temperatures","Developing a solar-powered telemetry node for off-grid pipeline monitoring"],
+    evidence:[{title:"GHLC Finalist Recognition",type:"Competition Status",file:null,placeholder:true,note:"Official GHLC finalist documentation to be attached upon certificate archiving."}]
+  },
+  {
+    id:"halo", title:"HALO", subtitle:"Low-Cost Connected Industrial Air Quality Monitoring Node",
+    field:"Industrial Air Quality & TinyML", statusBadge:"Concept & Sensor Prototype", statusType:"ongoing",
+    summary:"Prototyping an ESP32-based multi-sensor monitor for particulate matter and industrial gases with localized anomaly alerts.",
+    featured:false, bannerImage:null,
+    tags:["ESP32","PMS5003","MQ-135","TinyML Concept","Air Quality"],
+    problem:"Small workshops and light-industrial facilities often operate without real-time air quality monitors due to the high cost of industrial-grade analyzer equipment, exposing workers to unmeasured particulate spikes and solvent vapors.",
+    researchQuestion:"Can consumer-accessible optical dust sensors and semiconductor gas sensors be combined on an ESP32 node to provide dependable threshold warnings for particulate matter and volatile gases?",
+    myRole:["Developing circuit schematics and breadboard prototyping for ESP32 with PMS5003 and MQ-135","Writing Arduino C++ drivers for UART serial communication with particulate sensor","Evaluating preliminary TinyML edge inference concepts for gas drift compensation"],
+    teamRoles:[{name:"Mohamed Emad",role:"Embedded electronics prototyping, firmware integration, and sensor testing"}],
+    techStack:["ESP32 Microcontroller","PMS5003 Laser Particulate Matter Sensor (PM1.0, PM2.5, PM10)","MQ-135 Air Quality / Gas Sensor","DHT22 Temperature & Humidity Sensor",'0.96" I2C OLED Display (SSD1306)',"TinyML Edge Inference (Conceptual)"],
+    developmentStage:"Prototype Development (Bench Level)",
+    competitionStatus:"Independent student engineering exploration.",
+    juryFeedback:"N/A — Internal student research project.",
+    limitations:"MQ-series gas sensors exhibit cross-sensitivity and thermal drift. Draft performance numbers are preliminary bench tests and must not be treated as certified environmental monitoring figures.",
+    nextSteps:["Benchmarking PMS5003 readings against calibrated reference instruments","Writing calibration offsets based on ambient humidity readings from DHT22","Refining the TinyML anomaly detection model with real workshop logs"],
+    evidence:[]
+  },
+  {
+    id:"powermind", title:"PowerMind", subtitle:"Renewable Energy Monitoring & Hybrid Load Management",
+    field:"Energy Systems & Monitoring", statusBadge:"Early Research Concept", statusType:"concept",
+    summary:"Exploring real-time voltage and current analytics on hybrid solar/wind test setups to optimize student micro-grid utilization.",
+    featured:false, bannerImage:null,
+    tags:["ESP32","INA219","Renewable Energy","Power Analytics"],
+    problem:"Managing small off-grid hybrid renewable setups requires accurate real-time insight into generation peaks and storage capacity to prevent battery degradation and brownouts.",
+    researchQuestion:"How effectively can an ESP32-based telemetry node track bidirectional power flow in low-voltage hybrid solar/wind benches to inform smart load switching?",
+    myRole:["Conceptualizing system architecture and researching I2C power monitoring ICs (INA219)","Drafting schematic for dual-source voltage and shunt current sensing","Evaluating load-shedding control logic"],
+    teamRoles:[{name:"Mohamed Emad",role:"Concept formulation and sensor interface research"}],
+    techStack:["ESP32","INA219 High-Side I2C Current/Voltage Sensor","Solar Photovoltaic Test Cell","Micro-Wind Turbine Bench Rig"],
+    developmentStage:"Early Project Concept / Exploratory Design",
+    competitionStatus:"Exploratory student research idea.",
+    juryFeedback:"N/A — In early conceptual development.",
+    limitations:"PowerMind is in early conceptual formulation and has not been deployed on full-scale power grids or commercial renewable infrastructure.",
+    nextSteps:["Assembling the breadboard circuit with calibrated DC load resistors","Testing I2C communication rates under fluctuating electrical noise","Writing a lightweight data dashboard for live wattage telemetry"],
+    evidence:[]
+  }
+];
+
+const evidenceData = [
+  { id:"optiway-poster-pdf", title:"OptiWay Scientific Research Poster", category:"research", categoryLabel:"Research Poster",
+    date:"Late 2025", organization:"El Minya STEM School ISEF Fair", fileUrl:"assets/FinalIseff.pdf", previewImage:"assets/mohamed-isef.jpg", fileType:"pdf",
+    whatItProves:"Confirms authoring and defense of the quantitative traffic simulation study using SUMO 1.17 and Python 3.11 for New Minya City road networks.",
+    whatItDoesNotProve:"Does not prove physical road sensor network deployment or municipal city-wide adoption.", requiresRedaction:false, status:"verified" },
+  { id:"stem-enrollment-document", title:"Official El Minya STEM School Enrollment Certificate", category:"academic", categoryLabel:"Academic Verification",
+    date:"June 2026", organization:"Ministry of Education — Central Unit for Gifted and Talented", fileUrl:null, previewImage:"assets/stem-entrance.jpg", fileType:"image",
+    whatItProves:"Officially certifies Mohamed Emad Mohamed Ibrahim's regular enrollment at El Minya STEM School (first grade 2025/2026, advancing to second grade 2026/2027).",
+    whatItDoesNotProve:"Does not represent high school graduation completion or standardized test results.", requiresRedaction:true,
+    redactionNotice:"This document contains civil birthdate records and fee receipts. Click 'Redaction Mode' to view the privacy-safe display.", status:"verified" },
+  { id:"isef-defense-photo", title:"In-Person Poster Defense — El Minya STEM Fair", category:"presentation", categoryLabel:"Fair Presentation",
+    date:"December 2025", organization:"El Minya STEM School ISEF Fair", fileUrl:"assets/mohamed-isef.jpg", previewImage:"assets/mohamed-isef.jpg", fileType:"image",
+    whatItProves:"Verifies in-person participation and verbal defense of the OptiWay research project before the school judging committee.",
+    whatItDoesNotProve:"Does not indicate selection or travel to the Regeneron International Science & Engineering Fair (ISEF) in the United States.", requiresRedaction:false, status:"verified" },
+  { id:"prep-graduation-cert", title:"Preparatory School Completion Examination Certificate", category:"academic", categoryLabel:"Academic Verification",
+    date:"2024 / 2025", organization:"Ministry of Education & Minya Governorate Directorate", fileUrl:"assets/EngTranscript.pdf", previewImage:null, fileType:"pdf",
+    whatItProves:"Certifies completion of basic preparatory education with an overall score of 268.5 / 280 (95.9% Excellent rating), fulfilling academic admission prerequisites for STEM school entry.",
+    whatItDoesNotProve:"Does not reflect high school STEM capstone grades or secondary diploma marks.", requiresRedaction:true,
+    redactionNotice:"Contains national seating number and civil registration ID. Redaction mask applied.", status:"verified" },
+  { id:"mec-stem-hub-portal", title:"MEC STEM Hub Public Web Portal", category:"educational", categoryLabel:"Educational Platform",
+    date:"2025 — Present", organization:"MEC Club — El Minya STEM School", fileUrl:"https://mecstemhub.netlify.app/", previewImage:null, fileType:"external-link",
+    whatItProves:"Confirms the live online deployment and content repository of the student-led MEC STEM Hub supporting electronics roadmaps and Tinkercad labs.",
+    whatItDoesNotProve:"Does not prove formal Ministry of Education endorsement or standardized curriculum accreditation.", requiresRedaction:false, status:"verified" },
+  { id:"ieee-finalist-placeholder", title:"IEEE YESIST12 2026 Global Finalist Certificate", category:"certificates", categoryLabel:"Competition Certificate",
+    date:"June 2026", organization:"IEEE (Institute of Electrical and Electronics Engineers)", fileUrl:null, previewImage:null, fileType:"placeholder",
+    whatItProves:"Will verify global finalist standing in the Junior Einstein track for project BASIRA once official certificate file is uploaded.",
+    whatItDoesNotProve:"Does not represent a 1st place championship.", requiresRedaction:false, status:"pending_upload" },
+  { id:"idos-soroban-placeholder", title:"IDOS Mental Arithmetic Republic Champion Certificate", category:"certificates", categoryLabel:"Award Certificate",
+    date:"2024", organization:"International Delta Organization for Soroban (IDOS)", fileUrl:null, previewImage:null, fileType:"placeholder",
+    whatItProves:"Will verify first-place championship finish at republic level in mental arithmetic.",
+    whatItDoesNotProve:"Does not substitute for high school science olympiad certificates.", requiresRedaction:false, status:"pending_upload" }
+];
+
+const awardsData = [
+  { id:"placements", title:"Championships & Placements", description:"Verified competitive 1st place and ranking finishes.", items:[
+    { id:"idos-soroban-2024", title:"Republic Champion — Mental Arithmetic", organization:"International Delta Organization for Soroban (IDOS)",
+      year:"2024", scope:"National (Republic Level)", status:"First Place / Champion", verified:true,
+      context:"Achieved first place across Egypt in mental arithmetic competition during the second year of preparatory school, demonstrating rapid numerical processing and mental discipline.",
+      evidenceRef:"idos-soroban-placeholder", confirmationNeeded:false }
+  ]},
+  { id:"finalists", title:"International & National Finalist Status", description:"Selective competitive recognitions advancing to final evaluation rounds.", items:[
+    { id:"ieee-yesist12-2026", title:"Global Finalist — Junior Einstein Track", organization:"IEEE (Institute of Electrical and Electronics Engineers)",
+      year:"June 2026", scope:"International", status:"Global Finalist", verified:true,
+      context:"Qualified as a Global Finalist in the Junior Einstein track with project BASIRA, ranking among the reported top 5% worldwide across international student submissions.",
+      evidenceRef:"ieee-finalist-placeholder", confirmationNeeded:false, note:"Certificate wording to be mirrored verbatim once physical diploma is archived." },
+    { id:"ghlc-finalist", title:"Conference Finalist — Water Monitoring", organization:"Global Health Leaders Conference (GHLC)",
+      year:"2025 / 2026", scope:"International", status:"Finalist", verified:true,
+      context:"Selected as a finalist for project AquaPulse exploring low-cost real-time water quality early warning networks for rural communities.",
+      evidenceRef:null, confirmationNeeded:false },
+    { id:"eistef-finalist", title:"EISTEF In-Person Final Qualifier", organization:"Egypt International Science & Technology Exhibition Fair (EISTEF)",
+      year:"2025 / 2026", scope:"National Final", status:"In-Person Finalist", verified:true,
+      context:"Advanced through local STEM competition evaluations to qualify for the national in-person final stage with project GULP.",
+      evidenceRef:"optiway-poster-pdf", confirmationNeeded:false, note:"Qualified for in-person final round; does not constitute a first place finish." }
+  ]},
+  { id:"participations", title:"Academic Competitions & Participation", description:"Rigorous academic olympiads and hackathons participated in (distinguished strictly from awards).", items:[
+    { id:"usaii-hackathon-2026", title:"USAII Global AI Hackathon 2026", organization:"United States Artificial Intelligence Institute (USAII)",
+      year:"2026", scope:"Global", status:"Participant", verified:true,
+      context:"Participated in global AI hackathon exploring machine learning problem-solving and rapid modeling under competitive constraints.",
+      evidenceRef:null, confirmationNeeded:false, isParticipationOnly:true },
+    { id:"eocs-olympiad", title:"Egyptian Olympiad in Computational Science (EOCS)", organization:"Egyptian Olympiad in Computational Science Committee",
+      year:"2025 / 2026", scope:"National", status:"Participant", verified:false,
+      context:"Participated in national computational science testing algorithms and problem formulation.",
+      evidenceRef:null, confirmationNeeded:true, pendingField:"Awaiting exact competition year and official participation confirmation" },
+    { id:"purple-comet-math", title:"Purple Comet! Math Meet", organization:"Purple Comet International Math Competition",
+      year:"Pending Confirmation", scope:"International", status:"Reported Score: 25 / 30", verified:false,
+      context:"Collaborative international team mathematics competition solving advanced problem sets under timed conditions.",
+      evidenceRef:null, confirmationNeeded:true, pendingField:"Awaiting exact competition year and official event score record" },
+    { id:"chess-league", title:"El Minya STEM Chess League", organization:"El Minya STEM School Student Activity",
+      year:"Pending Confirmation", scope:"School Level", status:"Term 1 Winner", verified:false,
+      context:"Winner of Term 1 competitive school chess tournament demonstrating strategic calculation and positional foresight.",
+      evidenceRef:null, confirmationNeeded:true, pendingField:"Awaiting official tournament certificate and academic term confirmation" }
+  ]}
+];
+
+const leadershipData = [
+  { id:"mec-club", title:"MEC Club (El Minya STEM School)", role:"Founder / Founding Team Member",
+    officialStatus:"Pending confirmation of exact designated founding title", timeline:"2025 — Present", website:"https://mecstemhub.netlify.app/", flagship:true,
+    summary:"A student-led educational initiative established to provide peer-to-peer technical roadmaps, embedded systems workshops, and academic guidance for Egyptian STEM high school students.",
+    contributions:["Conceptualized the initial initiative structure and recruited motivated peer contributors across STEM schools","Organized and co-facilitated hands-on online embedded systems and Arduino training workshops","Integrated Autodesk Tinkercad simulations so students lacking access to physical microcontroller boards could construct and debug circuits online","Produced and hosted episodes of 'Knowledge That Benefits', an interview series connecting younger students with experienced graduates","Developed the official MEC STEM Hub web portal for archiving educational curriculums, event announcements, and technical guides","Managed promotional media design, video uploads, and social outreach"],
+    verifiedMetrics:[{label:"Workshop Cohorts",value:"40 – 70 students",detail:"Per live interactive session"},{label:"Educational Views",value:"> 4,000 views",detail:"Cumulative across published YouTube content"},{label:"Tinkercad Access",value:"Zero-Hardware Barrier",detail:"Online virtual circuit lab simulations"}],
+    metricCaveat:"Note on metrics: Cumulative views reflect video impressions and learning resource reach, not deduplicated unique long-term learners or guaranteed academic grade shifts." },
+  { id:"resala-stem-helpers", title:"Resala STEM Helpers", role:"High Board Member & Academics Head",
+    officialStatus:"Role reported by applicant; detailed semester records pending", timeline:"2025 — Present", website:null,
+    summary:"Leading academic support efforts, study circles, and peer tutoring structures to help newly admitted STEM students adjust to rigorous interdisciplinary curriculums.",
+    contributions:["Coordinating academic mentorship and subject study groups for Grade 10 students","Structuring peer review of foundational calculus, physics, and computer science concepts","Assisting in organizational planning alongside high board leadership"],
+    verifiedMetrics:[], confirmationPlaceholder:"Space reserved for Mohamed to confirm specific semester dates, peer tutor counts, and verified student feedback." },
+  { id:"eto-olympiad", title:"Egyptian Technology Olympiad (ETO)", role:"School Organizer — El Minya STEM School",
+    officialStatus:"Local School Organizer for 2026/2027 cycle", timeline:"2026 / 2027 Cycle", website:null,
+    summary:"Serving as local school coordinator for the multi-track technology olympiad across Artificial Intelligence, Computer Vision, Cybersecurity, Robotics, Embedded Systems, and Data Science.",
+    contributions:["Facilitating local student outreach and registrations within El Minya STEM School","Liaising with university academic contacts and competition representatives for workshop coordination","Assisting participating teams with laboratory scheduling and track requirements"],
+    verifiedMetrics:[{label:"Focus Tracks",value:"6 Technical Domains",detail:"AI, CV, Cyber, Robotics, Embedded, Data Science"}],
+    scopeCaveat:"Scope note: Mohamed serves as local school organizer connecting students and regional contacts, not the nationwide founder of the Olympiad entity." },
+  { id:"enviros", title:"Enviros", role:"Former President",
+    officialStatus:"Pending confirmation of exact dates, charter, and documentation", timeline:"Pending Confirmation", website:null,
+    summary:"Student environmental awareness initiative focused on sustainability concepts and campus waste reduction discussions.",
+    contributions:["Led student executive committee meetings","Organized environmental awareness activities"],
+    verifiedMetrics:[], confirmationPlaceholder:"Placeholder: Mohamed to supply exact presidential tenure dates, event records, and project deliverables prior to formal publication." },
+  { id:"minya-eye", title:"Minya EYE", role:"Coordination & HR Support",
+    officialStatus:"Pending confirmation of exact organization entity and formal titles", timeline:"Pending Confirmation", website:null,
+    summary:"Youth voluntary community and human resources coordination initiative.",
+    contributions:["Assisted with member onboarding and operational coordination","Supported team logistics for community initiatives"],
+    verifiedMetrics:[], confirmationPlaceholder:"Placeholder: Mohamed to confirm official legal organization name, specific duties, and exact service window." }
+];
+
+const timelineData = [
+  { id:"t1", date:"2024", title:"National Mental Arithmetic Republic Championship (IDOS)", category:"Award & Placement", badgeColor:"amber", stage:"National Placement",
+    description:"Won First Place across the Republic of Egypt in the International Delta Organization for Soroban (IDOS) mental arithmetic competition during Preparatory Grade 2.",
+    significance:"Demonstrated early mastery of quantitative discipline, concentration, and competitive speed under strict timed evaluations." },
+  { id:"t2", date:"Late 2024 / Early 2025", title:"Admission to El Minya STEM High School", category:"Academic Milestone", badgeColor:"blue", stage:"Secondary Admission",
+    description:"Secured admission to El Minya STEM High School following high academic performance (95.9% preparatory exam record) and Ministry entrance examinations.",
+    significance:"Transitioned into Egypt's specialized STEM school system emphasizing inquiry-based learning, capstone engineering projects, and scientific methodology." },
+  { id:"t3", date:"Late 2025", title:"OptiWay — School-Level ISEF Research Fair", category:"School-Level Research", badgeColor:"emerald", stage:"Simulation Study",
+    description:"Conducted quantitative simulation research on multi-agent collective traffic coordination in SUMO 1.17 to eliminate emergency vehicle delays in New Minya City; authored and presented full scientific poster.",
+    significance:"Initial formal research endeavor establishing proficiency in Python (Pandas/SciPy), urban mobility simulations, and hypothesis testing." },
+  { id:"t4", date:"2025", title:"Establishment of MEC Club & Educational Roadmaps", category:"Educational Leadership", badgeColor:"purple", stage:"Student Initiative",
+    description:"Co-founded the MEC student initiative, introducing Tinkercad virtual labs for students without hardware and launching the 'Knowledge That Benefits' interview series.",
+    significance:"Fostered accessible peer education across Egyptian STEM schools, logging over 4,000 views and conducting 40-70 student workshops." },
+  { id:"t5", date:"Early 2026", title:"BASIRA — IEEE YESIST12 Junior Einstein Finalist", category:"International Finalist", badgeColor:"sky", stage:"Global Finalist",
+    description:"Co-developed BASIRA chest-worn embedded navigation aid (ESP32, Ultrasonic, MPU6050, DFPlayer). Selected as Global Finalist in IEEE YESIST12 2026, ranking in reported top 5% worldwide.",
+    significance:"Validated student assistive hardware design before an international engineering evaluation committee." },
+  { id:"t6", date:"Early 2026", title:"GULP — Local Competition & EISTEF In-Person Qualifier", category:"Regional / National Final", badgeColor:"orange", stage:"National Qualifier",
+    description:"Formulated research problem evaluating swallowing sensor acquisition variability against physiological variation; advanced through local rounds to qualify for EISTEF in-person national final.",
+    significance:"Addressed rigorous juror feedback regarding practical bio-acoustic testing and hardware refinement." },
+  { id:"t7", date:"2026", title:"AquaPulse — Global Health Leaders Conference (GHLC) Finalist", category:"International Finalist", badgeColor:"cyan", stage:"Global Finalist",
+    description:"Conceptualized distributed multi-node rural drinking water quality early warning network (ESP32, pH, turbidity, conductivity); named finalist in the GHLC competition.",
+    significance:"Applied embedded sensing to community health and water distribution infrastructure challenges." },
+  { id:"t8", date:"2026 / 2027", title:"Egyptian Technology Olympiad (ETO) Organizing Committee", category:"Leadership & Community", badgeColor:"indigo", stage:"Ongoing Leadership",
+    description:"Selected as local school organizer for the 2026/2027 cycle, coordinating student outreach and academic lab access across 6 technology domains.",
+    significance:"Connecting high school engineering teams with regional academic mentors." }
+];
+
+const skillsData = [
+  { category:"Embedded Systems & Hardware", description:"Hands-on microcontroller programming, sensor interfacing, and hardware prototyping applied in student projects.", skills:[
+    { name:"ESP32 & Arduino", context:"Firmware logic, GPIO, UART, I2C, Wi-Fi telemetry in BASIRA, HALO, and AquaPulse" },
+    { name:"C++ (Embedded)", context:"Sensor polling loops, state machines, interrupt handling on Arduino IDE" },
+    { name:"Sensor Integration", context:"Ultrasonic (HC-SR04), IMU (MPU6050), Gas (MQ-135), Optical Dust (PMS5003), pH & Turbidity" },
+    { name:"Tinkercad Circuits", context:"Circuit simulation used for remote student workshops when physical hardware is unavailable" },
+    { name:"Breadboard Prototyping", context:"Power distribution, pull-up resistors, module interconnection, and debugging" }
+  ]},
+  { category:"Data Analysis & Simulation", description:"Computational tools used for scientific research, simulation modeling, and quantitative hypothesis testing.", skills:[
+    { name:"Python", context:"Data manipulation, script automation, and statistical testing in simulation research" },
+    { name:"SUMO 1.17", context:"Traffic simulation software: network generation, vehicle demand, and multi-agent routing" },
+    { name:"Pandas & NumPy", context:"Cleaning time-series telemetry, trip metrics, and paired dataset transformations" },
+    { name:"SciPy (Statistical Testing)", context:"Paired sample t-tests, standard deviation, and variance analysis" },
+    { name:"TinyML (Foundational)", context:"Studying edge anomaly detection concepts on microcontrollers" }
+  ]},
+  { category:"Scientific Research & Communication", description:"Academic methodologies applied from preliminary question formulation to juror presentations.", skills:[
+    { name:"Research Question Formulation", context:"Defining testable, falsifiable engineering and scientific questions (GULP, OptiWay)" },
+    { name:"Literature Review", context:"Reading, synthesizing, and citing peer-reviewed papers in bio-acoustics and transportation" },
+    { name:"Scientific Posters & Abstracts", context:"Authoring high-density academic posters aligned with ISEF and EISTEF standards" },
+    { name:"Presentation & Defense", context:"Explaining methodological boundaries and answering technical questions before judging panels" }
+  ]},
+  { category:"STEM Education & Leadership", description:"Initiative building, community facilitation, and peer knowledge dissemination.", skills:[
+    { name:"STEM Workshop Facilitation", context:"Leading virtual interactive sessions for 40–70 STEM high school students via MEC" },
+    { name:"Curriculum & Roadmap Design", context:"Drafting step-by-step learning pathways for electronics and computer science newcomers" },
+    { name:"Science Interview Hosting", context:"Conducting interviews for 'Knowledge That Benefits' with senior graduates" },
+    { name:"Website Development", context:"Building web hubs (MEC STEM Hub on Netlify, personal portfolio) using modern HTML/JS/React" },
+    { name:"Team Coordination", context:"Aligning team roles, milestones, and competition submissions across multidisciplinary teams" }
+  ]}
+];
+
+const drawerVerified = [
+  { claim:"Enrolled in Grade 11 at El Minya STEM School", source:"Official MOE Gifted & Talented Certificate (June 2026)", status:"Fully Verified" },
+  { claim:"OptiWay Research Poster Presentation at ISEF Fair", source:"Authored poster PDF & Fair Presentation Photo", status:"Fully Verified" },
+  { claim:"95.9% (268.5/280) Preparatory Completion Score", source:"Ministry of Education Certificate of Examination", status:"Fully Verified" },
+  { claim:"MEC Club Platform Deployment", source:"Live Netlify Deployment (mecstemhub.netlify.app)", status:"Fully Verified" },
+  { claim:"IDOS Mental Arithmetic Republic Champion (2024)", source:"Applicant competition record (first place republic level)", status:"Verified Record" },
+  { claim:"IEEE YESIST12 2026 Junior Einstein Global Finalist", source:"Applicant competition record (reported top 5% worldwide)", status:"Verified Finalist" },
+  { claim:"GHLC Finalist for AquaPulse", source:"Applicant competition submission", status:"Verified Finalist" },
+  { claim:"EISTEF In-Person Final Qualification for GULP", source:"Local STEM competition qualification result", status:"Verified Qualifier" }
+];
+const drawerBoundaries = [
+  { project:"GULP", boundary:"Swallowing reliability testing is incomplete; bio-signal algorithm not yet validated on a clinical cohort." },
+  { project:"BASIRA", boundary:"Student engineering prototype; not clinically validated; does not guarantee collision prevention." },
+  { project:"AquaPulse", boundary:"Bench sensor testing; not deployed in rural water distribution pipelines; no clinical disease claims." },
+  { project:"HALO", boundary:"Initial sensor breadboard; TinyML model is conceptual; gas sensors subject to environmental drift." },
+  { project:"PowerMind", boundary:"Early exploratory research concept; strictly non-commercial." }
+];
+const drawerPending = [
+  { item:"Purple Comet Math Meet", detail:"Awaiting exact competition year and official score record (reported 25/30)" },
+  { item:"El Minya STEM Chess League", detail:"Awaiting official tournament certificate and academic term confirmation" },
+  { item:"Egyptian Olympiad in Computational Science (EOCS)", detail:"Awaiting exact competition year and participation certificate" },
+  { item:"Enviros Presidential Tenure", detail:"Awaiting exact presidential dates and documented outcomes" },
+  { item:"Minya EYE Exact Role", detail:"Awaiting confirmation of exact duties, dates, and legal organization name" }
+];
+
+/* ================================================================
+   THEME
+================================================================ */
+(function initTheme(){
+  const saved = localStorage.getItem('theme');
+  const prefers = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  if (saved === 'dark' || (!saved && prefers)) document.documentElement.classList.add('dark');
+})();
+function toggleTheme(){
+  const dark = document.documentElement.classList.toggle('dark');
+  localStorage.setItem('theme', dark ? 'dark' : 'light');
+}
+
+/* ================================================================
+   NAVBAR
+================================================================ */
+const navItems = [
+  {name:"Projects",href:"#projects"},{name:"Awards",href:"#awards"},{name:"Leadership",href:"#leadership"},
+  {name:"Timeline",href:"#timeline"},{name:"Skills",href:"#skills"},{name:"Evidence",href:"#evidence"},
+  {name:"About",href:"#about"},{name:"Contact",href:"#contact"}
+];
+function renderNav(){
+  document.getElementById('navLinks').innerHTML = navItems.map(n =>
+    `<a href="${n.href}" class="text-xs font-medium text-zinc-700 dark:text-zinc-300 hover:text-amber-700 dark:hover:text-amber-400 transition-colors">${n.name}</a>`).join('');
+  document.getElementById('mobileMenu').innerHTML =
+    `<div class="flex flex-col gap-3">` + navItems.map(n =>
+      `<a href="${n.href}" onclick="toggleMobileMenu()" class="text-sm font-medium text-zinc-700 dark:text-zinc-300 hover:text-amber-700 dark:hover:text-amber-400 py-1">${n.name}</a>`).join('') +
+    `<div class="pt-2 border-t border-zinc-200 dark:border-zinc-800 flex items-center justify-between">
+       <button onclick="toggleMobileMenu(); openDrawer()" class="flex items-center gap-2 text-xs font-medium text-amber-800 dark:text-amber-300 py-1.5">
+         <i data-lucide="shield-check" class="w-4 h-4 text-amber-600 dark:text-amber-400"></i><span>Open Reviewer Fact-Check Sheet</span>
+       </button>
+     </div></div>`;
+}
+function toggleMobileMenu(){
+  const m = document.getElementById('mobileMenu');
+  m.classList.toggle('hidden');
+  const open = !m.classList.contains('hidden');
+  document.getElementById('mobileMenuIcon').outerHTML =
+    `<i data-lucide="${open ? 'x' : 'menu'}" class="w-5 h-5" id="mobileMenuIcon"></i>`;
+  lucide.createIcons();
+}
+window.addEventListener('scroll', () => {
+  const nav = document.getElementById('navbar');
+  const scrolled = window.scrollY > 20;
+  nav.className = `fixed top-0 left-0 right-0 z-40 transition-all duration-200 ${scrolled
+    ? 'bg-white/90 dark:bg-zinc-950/90 backdrop-blur-md border-b border-zinc-200/80 dark:border-zinc-800/80'
+    : 'border-b border-transparent'}`;
+});
+
+/* ================================================================
+   HERO CHIPS
+================================================================ */
+function renderHeroChips(){
+  const chips = [
+    {label:"Embedded Systems & ESP32", icon:"cpu"},
+    {label:"Traffic Simulation (SUMO)", icon:"brain-circuit"},
+    {label:"Signal Processing Research", icon:"file-text"},
+    {label:"Peer STEM Workshops (MEC)", icon:"graduation-cap"}
+  ];
+  document.getElementById('heroChips').innerHTML = chips.map(c =>
+    `<span class="inline-flex items-center gap-1.5 text-xs px-2.5 py-1 rounded bg-white dark:bg-zinc-900 subtle-border text-zinc-700 dark:text-zinc-300 font-mono">
+       <i data-lucide="${c.icon}" class="w-3.5 h-3.5 text-amber-600 dark:text-amber-400"></i>${c.label}</span>`).join('');
+}
+
+/* ================================================================
+   PROJECTS
+================================================================ */
+let projectFilter = 'all';
+const projectTabs = [
+  {id:"all",label:"All Projects (6)"},{id:"embedded",label:"Embedded & Sensors"},
+  {id:"simulation",label:"AI & Simulation"},{id:"environmental",label:"Environmental & Energy"}
+];
+function statusClasses(t){
+  switch(t){
+    case 'completed': return 'bg-emerald-50 dark:bg-emerald-950/40 text-emerald-800 dark:text-emerald-300 border-emerald-200 dark:border-emerald-800/60';
+    case 'finalist':  return 'bg-sky-50 dark:bg-sky-950/40 text-sky-800 dark:text-sky-300 border-sky-200 dark:border-sky-800/60';
+    case 'ongoing':   return 'bg-amber-50 dark:bg-amber-950/40 text-amber-800 dark:text-amber-300 border-amber-200 dark:border-amber-800/60';
+    default:          return 'bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 border-zinc-200 dark:border-zinc-700';
+  }
+}
+function matchesProjectFilter(p){
+  if (projectFilter === 'all') return true;
+  const f = p.field.toLowerCase();
+  if (projectFilter === 'embedded') return f.includes('embedded');
+  if (projectFilter === 'simulation') return f.includes('simulation') || f.includes('ai');
+  if (projectFilter === 'environmental') return f.includes('water') || f.includes('air') || f.includes('energy');
+  return true;
+}
+function renderProjectTabs(){
+  document.getElementById('projectTabs').innerHTML = projectTabs.map(t =>
+    `<button onclick="setProjectFilter('${t.id}')" class="text-xs font-mono px-3 py-1.5 rounded-md transition-colors ${
+      projectFilter===t.id ? 'tab-on font-medium' : 'bg-zinc-100 dark:bg-zinc-850 text-zinc-700 dark:text-zinc-300 hover:bg-zinc-200 dark:hover:bg-zinc-800'}">${t.label}</button>`).join('');
+}
+function setProjectFilter(f){ projectFilter = f; renderProjectTabs(); renderProjects(); }
+function renderProjects(){
+  const list = projectsData.filter(matchesProjectFilter);
+  document.getElementById('projectsGrid').innerHTML = list.map(p => `
+    <div class="editorial-card rounded-xl p-5 sm:p-6 flex flex-col justify-between hover:border-zinc-300 dark:hover:border-zinc-700 hover:shadow-sm">
+      <div>
+        <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+          <span class="text-[11px] font-mono uppercase tracking-wider text-zinc-700 dark:text-zinc-300 font-semibold">${p.field}</span>
+          <span class="inline-flex items-center gap-1 text-[11px] font-mono px-2 py-0.5 rounded border ${statusClasses(p.statusType)}">${p.statusBadge}</span>
+        </div>
+        <h3 class="text-xl font-bold tracking-tight mb-1">${p.title}</h3>
+        <p class="text-xs font-medium text-zinc-700 dark:text-zinc-300 mb-4">${p.subtitle}</p>
+        <div class="mb-4 p-3.5 rounded-lg bg-zinc-50 dark:bg-zinc-950/60 border-l-2 border-amber-500 subtle-border">
+          <p class="text-[11px] font-mono text-amber-800 dark:text-amber-400 font-semibold uppercase tracking-wider mb-1">Research / Design Question</p>
+          <p class="text-xs text-zinc-700 dark:text-zinc-300 italic leading-relaxed">"${p.researchQuestion}"</p>
+        </div>
+        <p class="text-xs text-zinc-700 dark:text-zinc-300 leading-relaxed mb-4">${p.summary}</p>
+        <div class="mb-4 pt-3 border-t border-zinc-100 dark:border-zinc-800/60">
+          <div class="flex items-center gap-1.5 text-xs font-semibold text-zinc-800 dark:text-zinc-200 mb-1.5">
+            <i data-lucide="user-check" class="w-3.5 h-3.5 text-amber-600 dark:text-amber-400"></i><span>My Specific Contribution:</span>
+          </div>
+          <ul class="text-xs text-zinc-700 dark:text-zinc-300 space-y-1 list-disc list-inside">
+            ${p.myRole.slice(0,2).map(r=>`<li class="line-clamp-1">${r}</li>`).join('')}
+          </ul>
+        </div>
+        <div class="flex flex-wrap gap-1.5 mb-5">
+          ${p.techStack.slice(0,4).map(t=>`<span class="text-[10px] font-mono px-2 py-0.5 rounded bg-zinc-100 dark:bg-zinc-800/70 text-zinc-700 dark:text-zinc-300">${t}</span>`).join('')}
+          ${p.techStack.length>4?`<span class="text-[10px] font-mono px-1.5 py-0.5 text-zinc-600 dark:text-zinc-400">+${p.techStack.length-4} more</span>`:''}
+        </div>
+      </div>
+      <div class="pt-4 border-t border-zinc-100 dark:border-zinc-800 flex items-center justify-between gap-3">
+        <div class="flex items-center gap-1.5 text-[11px] text-zinc-700 dark:text-zinc-300">
+          <i data-lucide="circle-alert" class="w-3.5 h-3.5 text-zinc-600 dark:text-zinc-400 shrink-0"></i>
+          <span class="truncate" style="max-width:170px">${p.developmentStage}</span>
+        </div>
+        <button onclick="openProjectModal('${p.id}')" class="inline-flex items-center gap-1 text-xs font-semibold text-amber-800 dark:text-amber-400 hover:text-amber-900 dark:hover:text-amber-300 shrink-0 transition-colors">
+          <span>Deep Dive</span><i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+        </button>
+      </div>
+    </div>`).join('');
+  lucide.createIcons();
+}
+function openProjectModal(id){
+  const p = projectsData.find(x => x.id === id);
+  const evHtml = p.evidence && p.evidence.length > 0 ? `
+    <div class="pt-4 border-t border-zinc-200 dark:border-zinc-800">
+      <h4 class="text-xs font-mono uppercase tracking-wider text-zinc-700 dark:text-zinc-300 font-bold mb-3 flex items-center gap-1.5">
+        <i data-lucide="file-text" class="w-4 h-4 text-zinc-600 dark:text-zinc-400"></i>Associated Project Evidence & Documents
+      </h4>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+        ${p.evidence.map(ev => `
+          <div class="p-3 rounded-lg bg-zinc-50 dark:bg-zinc-850 subtle-border flex items-start justify-between gap-3 text-left">
+            <div>
+              <p class="text-xs font-bold text-zinc-900 dark:text-zinc-100">${ev.title}</p>
+              <p class="text-[11px] text-zinc-700 dark:text-zinc-300">${ev.type}</p>
+              <p class="text-[10px] text-zinc-600 dark:text-zinc-400 italic mt-0.5">${ev.note}</p>
+            </div>
+            ${ev.file
+              ? `<a href="${ev.file}" target="_blank" rel="noopener noreferrer" class="p-1.5 rounded bg-zinc-200 dark:bg-zinc-700 text-zinc-700 dark:text-zinc-200 hover:text-amber-800 dark:hover:text-amber-300 shrink-0" title="View Document"><i data-lucide="external-link" class="w-3.5 h-3.5"></i></a>`
+              : `<span class="text-[10px] font-mono px-1.5 py-0.5 rounded bg-amber-100 dark:bg-amber-950 text-amber-800 dark:text-amber-300 shrink-0">Pending Archive</span>`}
+          </div>`).join('')}
+      </div>
+    </div>` : '';
+  document.getElementById('projectModalContent').innerHTML = `
+    <div class="flex items-start justify-between gap-4 mb-4">
+      <div>
+        <div class="flex flex-wrap items-center gap-2 mb-1.5">
+          <span class="text-xs font-mono uppercase tracking-wider text-amber-800 dark:text-amber-400 font-semibold">${p.field}</span>
+          <span class="text-xs font-mono px-2 py-0.5 rounded border ${statusClasses(p.statusType)}">${p.statusBadge}</span>
+        </div>
+        <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight">${p.title}</h2>
+        <p class="text-sm font-medium text-zinc-700 dark:text-zinc-300 mt-0.5">${p.subtitle}</p>
+      </div>
+      <button onclick="closeProjectModal()" class="p-2 rounded-lg text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 hover:bg-zinc-100 dark:hover:bg-zinc-800" aria-label="Close">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+    </div>
+    <div class="mb-6 p-4 rounded-lg bg-zinc-50 dark:bg-zinc-950/70 border-l-4 border-amber-500 subtle-border">
+      <p class="text-xs font-mono uppercase tracking-wider text-amber-800 dark:text-amber-400 font-bold mb-1">Research / Design Question</p>
+      <p class="text-sm text-zinc-800 dark:text-zinc-200 italic font-medium leading-relaxed">"${p.researchQuestion}"</p>
+    </div>
+    <div class="mb-6">
+      <h4 class="text-xs font-mono uppercase tracking-wider text-zinc-700 dark:text-zinc-300 font-bold mb-2 flex items-center gap-1.5">
+        <i data-lucide="layers" class="w-4 h-4 text-zinc-600 dark:text-zinc-400"></i>Problem Being Explored
+      </h4>
+      <p class="text-xs sm:text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed">${p.problem}</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+      <div class="p-4 rounded-lg bg-amber-50/50 dark:bg-amber-950/20 border border-amber-200/70 dark:border-amber-800/50">
+        <h4 class="text-xs font-mono uppercase tracking-wider text-amber-800 dark:text-amber-300 font-bold mb-2 flex items-center gap-1.5">
+          <i data-lucide="user-check" class="w-4 h-4 text-amber-600 dark:text-amber-400"></i>My Specific Contribution
+        </h4>
+        <ul class="text-xs text-zinc-700 dark:text-zinc-300 space-y-1.5 list-disc list-inside">
+          ${p.myRole.map(r=>`<li class="leading-relaxed">${r}</li>`).join('')}
+        </ul>
+      </div>
+      <div class="p-4 rounded-lg bg-zinc-50 dark:bg-zinc-950/50 subtle-border">
+        <h4 class="text-xs font-mono uppercase tracking-wider text-zinc-700 dark:text-zinc-300 font-bold mb-2 flex items-center gap-1.5">
+          <i data-lucide="users" class="w-4 h-4 text-zinc-600 dark:text-zinc-400"></i>Confirmed Team & Mentor Roles
+        </h4>
+        <ul class="text-xs text-zinc-700 dark:text-zinc-300 space-y-2">
+          ${p.teamRoles.map(r=>`<li class="leading-relaxed"><strong class="text-zinc-900 dark:text-zinc-100">${r.name}:</strong> ${r.role}</li>`).join('')}
+        </ul>
+      </div>
+    </div>
+    <div class="mb-6">
+      <h4 class="text-xs font-mono uppercase tracking-wider text-zinc-700 dark:text-zinc-300 font-bold mb-2">Technologies & Hardware Stack</h4>
+      <div class="flex flex-wrap gap-2">
+        ${p.techStack.map(t=>`<span class="text-xs font-mono px-2.5 py-1 rounded bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 subtle-border">${t}</span>`).join('')}
+      </div>
+    </div>
+    <div class="mb-6 p-4 rounded-lg bg-zinc-50 dark:bg-zinc-950/60 subtle-border">
+      <h4 class="text-xs font-mono uppercase tracking-wider text-zinc-700 dark:text-zinc-300 font-bold mb-2 flex items-center gap-1.5">
+        <i data-lucide="award" class="w-4 h-4 text-sky-600 dark:text-sky-400"></i>Competition Status & Evaluator Feedback
+      </h4>
+      <p class="text-xs sm:text-sm text-zinc-700 dark:text-zinc-300 mb-2 leading-relaxed"><strong class="text-zinc-900 dark:text-zinc-100">Status:</strong> ${p.competitionStatus}</p>
+      <p class="text-xs sm:text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed italic"><strong class="not-italic text-zinc-900 dark:text-zinc-100">Evaluation Feedback:</strong> ${p.juryFeedback}</p>
+    </div>
+    <div class="mb-6 p-4 rounded-lg bg-amber-50/60 dark:bg-amber-950/30 border border-amber-300 dark:border-amber-800/60">
+      <h4 class="text-xs font-mono uppercase tracking-wider text-amber-800 dark:text-amber-300 font-bold mb-1.5 flex items-center gap-1.5">
+        <i data-lucide="triangle-alert" class="w-4 h-4 text-amber-600 dark:text-amber-400"></i>Current Development Stage & Honest Limitations
+      </h4>
+      <p class="text-xs text-zinc-700 dark:text-zinc-300 leading-relaxed mb-3">${p.limitations}</p>
+      <div class="border-t border-amber-200 dark:border-amber-900/60 pt-2">
+        <span class="text-[11px] font-mono text-amber-800 dark:text-amber-400 font-semibold block mb-1">Active Next Steps:</span>
+        <ul class="text-xs text-zinc-700 dark:text-zinc-300 space-y-1 list-disc list-inside">
+          ${p.nextSteps.map(s=>`<li>${s}</li>`).join('')}
+        </ul>
+      </div>
+    </div>
+    ${evHtml}
+    <div class="mt-6 pt-4 border-t border-zinc-200 dark:border-zinc-800 flex justify-end">
+      <button onclick="closeProjectModal()" class="px-4 py-2 rounded-md bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900 text-xs font-medium hover:bg-zinc-800 dark:hover:bg-zinc-200 transition-colors">Close Project Overview</button>
+    </div>`;
+  document.getElementById('projectOverlay').classList.remove('hidden-anim');
+  document.body.style.overflow = 'hidden';
+  lucide.createIcons();
+}
+function closeProjectModal(){
+  document.getElementById('projectOverlay').classList.add('hidden-anim');
+  document.body.style.overflow = '';
+}
+
+/* ================================================================
+   AWARDS
+================================================================ */
+function awardGroupIcon(id){
+  if (id==='placements') return `<i data-lucide="trophy" class="w-4 h-4 text-amber-500"></i>`;
+  if (id==='finalists')  return `<i data-lucide="award" class="w-4 h-4 text-sky-500"></i>`;
+  return `<i data-lucide="flag" class="w-4 h-4 text-zinc-500"></i>`;
+}
+function renderAwards(){
+  document.getElementById('awardsGroups').innerHTML = awardsData.map(g => `
+    <div class="editorial-card rounded-xl p-6 subtle-border">
+      <div class="flex items-center justify-between pb-4 mb-6 border-b border-zinc-100 dark:border-zinc-800">
+        <div class="flex items-center gap-2.5">
+          <div class="p-1.5 rounded-md bg-zinc-100 dark:bg-zinc-800">${awardGroupIcon(g.id)}</div>
+          <div>
+            <h3 class="text-base sm:text-lg font-bold">${g.title}</h3>
+            <p class="text-xs text-zinc-700 dark:text-zinc-300">${g.description}</p>
+          </div>
+        </div>
+        <span class="text-xs font-mono px-2 py-0.5 rounded bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300">${g.items.length} ${g.items.length===1?'Record':'Records'}</span>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        ${g.items.map(w => `
+          <div class="p-4 rounded-lg text-left transition-all ${w.confirmationNeeded
+            ? 'bg-amber-50/40 dark:bg-amber-950/20 border border-amber-200/80 dark:border-amber-800/40'
+            : 'bg-zinc-50/80 dark:bg-zinc-950/50 subtle-border'}">
+            <div class="flex items-start justify-between gap-2 mb-2">
+              <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-white dark:bg-zinc-900 subtle-border text-zinc-700 dark:text-zinc-300 font-medium">${w.year}</span>
+              <span class="text-[10px] font-mono uppercase tracking-wider text-zinc-600 dark:text-zinc-400">${w.scope}</span>
+            </div>
+            <h4 class="text-sm font-bold mb-1 leading-snug">${w.title}</h4>
+            <p class="text-xs font-medium text-amber-800 dark:text-amber-400 mb-2">${w.organization}</p>
+            <p class="text-xs text-zinc-700 dark:text-zinc-300 leading-relaxed mb-3">${w.context}</p>
+            <div class="pt-2.5 border-t border-zinc-200/60 dark:border-zinc-800/60 flex items-center justify-between text-[11px]">
+              ${w.isParticipationOnly
+                ? `<span class="text-zinc-700 dark:text-zinc-300 font-mono">Status: Participant (Non-Award)</span>`
+                : w.verified
+                  ? `<span class="inline-flex items-center gap-1 text-emerald-800 dark:text-emerald-300 font-medium"><i data-lucide="circle-check" class="w-3.5 h-3.5"></i>${w.status}</span>`
+                  : `<span class="inline-flex items-center gap-1 text-amber-800 dark:text-amber-300 font-medium"><i data-lucide="circle-help" class="w-3.5 h-3.5"></i>Pending Confirmation</span>`}
+              ${w.evidenceRef ? `<button onclick="openEvidenceById('${w.evidenceRef}')" class="text-xs text-amber-800 dark:text-amber-400 hover:underline font-mono">View Record →</button>` : ''}
+            </div>
+            ${w.confirmationNeeded && w.pendingField ? `
+              <div class="mt-2.5 p-2 rounded bg-amber-100/60 dark:bg-amber-900/30 text-[10px] text-amber-900 dark:text-amber-200 flex items-center gap-1.5 font-mono">
+                <i data-lucide="circle-alert" class="w-3 h-3 text-amber-700 dark:text-amber-400 shrink-0"></i><span>Action: ${w.pendingField}</span>
+              </div>` : ''}
+          </div>`).join('')}
+      </div>
+    </div>`).join('');
+}
+
+/* ================================================================
+   LEADERSHIP
+================================================================ */
+function renderLeadership(){
+  const mec = leadershipData.find(l => l.id === 'mec-club');
+  const rest = leadershipData.filter(l => l.id !== 'mec-club');
+  document.getElementById('mecFlagship').innerHTML = `
+    <div class="editorial-card rounded-xl p-6 sm:p-8 subtle-border mb-10 shadow-xs text-left">
+      <div class="flex flex-wrap items-start justify-between gap-4 pb-6 mb-6 border-b border-zinc-200/80 dark:border-zinc-800">
+        <div>
+          <div class="flex flex-wrap items-center gap-2 mb-2">
+            <span class="text-xs font-mono px-2.5 py-0.5 rounded-full bg-amber-100 dark:bg-amber-950/60 text-amber-800 dark:text-amber-300 border border-amber-300 dark:border-amber-800/60 font-semibold">Flagship Student Initiative</span>
+            <span class="text-xs font-mono text-zinc-700 dark:text-zinc-300 flex items-center gap-1">
+              <i data-lucide="calendar" class="w-3.5 h-3.5 text-zinc-600 dark:text-zinc-400"></i>${mec.timeline}
+            </span>
+          </div>
+          <h3 class="text-xl sm:text-3xl font-extrabold">${mec.title}</h3>
+          <p class="text-sm font-medium text-amber-800 dark:text-amber-400 mt-1">Role: ${mec.role} —
+            <span class="text-xs text-zinc-700 dark:text-zinc-300 font-normal">(${mec.officialStatus})</span>
+          </p>
+        </div>
+        <a href="${mec.website}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3 py-2 rounded-md bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-950 text-xs font-medium hover:bg-zinc-800 transition-colors">
+          <span>Visit MEC STEM Hub</span><i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+        </a>
+      </div>
+      <p class="text-xs sm:text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed mb-6">${mec.summary}</p>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-6">
+        ${mec.verifiedMetrics.map(m => `
+          <div class="p-3.5 rounded-lg bg-zinc-50 dark:bg-zinc-950/60 subtle-border">
+            <span class="text-[11px] font-mono text-zinc-700 dark:text-zinc-300 block mb-1 font-semibold">${m.label}</span>
+            <p class="text-lg sm:text-xl font-extrabold tracking-tight">${m.value}</p>
+            <p class="text-[11px] text-zinc-700 dark:text-zinc-300 mt-0.5">${m.detail}</p>
+          </div>`).join('')}
+      </div>
+      <div class="p-3 rounded-lg bg-zinc-100/80 dark:bg-zinc-850/60 text-[11px] text-zinc-700 dark:text-zinc-300 mb-6 flex items-start gap-2">
+        <i data-lucide="circle-alert" class="w-4 h-4 text-zinc-600 dark:text-zinc-400 shrink-0 mt-0.5"></i><span>${mec.metricCaveat}</span>
+      </div>
+      <div>
+        <h4 class="text-xs font-mono uppercase tracking-wider text-zinc-700 dark:text-zinc-300 font-bold mb-3 flex items-center gap-1.5">
+          <i data-lucide="book-open" class="w-4 h-4 text-zinc-600 dark:text-zinc-400"></i>Key Contributions & Workshop Delivery
+        </h4>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-2.5">
+          ${mec.contributions.map(c => `
+            <div class="p-3 rounded-lg bg-zinc-50 dark:bg-zinc-950/40 subtle-border flex items-start gap-2.5">
+              <span class="w-1.5 h-1.5 rounded-full bg-amber-500 mt-1.5 shrink-0"></span>
+              <span class="text-xs text-zinc-700 dark:text-zinc-300 leading-relaxed">${c}</span>
+            </div>`).join('')}
+        </div>
+      </div>
+      <div class="mt-6 pt-6 border-t border-zinc-200/80 dark:border-zinc-800 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 bg-amber-50/40 dark:bg-amber-950/20 p-4 rounded-lg border border-amber-200/60 dark:border-amber-900/40">
+        <div class="flex items-start gap-3">
+          <div class="p-2 rounded-md bg-amber-100 dark:bg-amber-900/60 text-amber-800 dark:text-amber-300 shrink-0"><i data-lucide="video" class="w-4 h-4"></i></div>
+          <div>
+            <h4 class="text-xs font-bold uppercase tracking-wide">Featured Series: "Knowledge That Benefits" (علم يُنتفع به)</h4>
+            <p class="text-xs text-zinc-700 dark:text-zinc-300 mt-0.5 leading-relaxed">Student-to-student interview series hosting graduates and olympiad achievers to deconstruct competition pathways and study routines.</p>
+          </div>
+        </div>
+        <span class="text-[11px] font-mono px-2.5 py-1 rounded bg-white dark:bg-zinc-900 subtle-border text-zinc-700 dark:text-zinc-300 shrink-0">Host & Interviewer</span>
+      </div>
+    </div>`;
+  document.getElementById('leadershipGrid').innerHTML = rest.map(d => `
+    <div class="editorial-card rounded-xl p-5 text-left subtle-border ${d.confirmationPlaceholder ? 'bg-zinc-50/50 dark:bg-zinc-900/50' : ''}">
+      <div class="flex items-start justify-between gap-2 mb-2">
+        <span class="text-xs font-mono font-medium text-amber-800 dark:text-amber-400">${d.role}</span>
+        <span class="text-[11px] font-mono text-zinc-600 dark:text-zinc-400">${d.timeline}</span>
+      </div>
+      <h3 class="text-base font-bold mb-1.5">${d.title}</h3>
+      <p class="text-xs text-zinc-700 dark:text-zinc-300 leading-relaxed mb-3">${d.summary}</p>
+      <ul class="text-xs text-zinc-700 dark:text-zinc-300 space-y-1 list-disc list-inside mb-3">
+        ${d.contributions.map(c=>`<li>${c}</li>`).join('')}
+      </ul>
+      ${d.verifiedMetrics && d.verifiedMetrics.length ? `
+        <div class="p-3 rounded-lg bg-zinc-50 dark:bg-zinc-950/60 subtle-border mb-3">
+          <span class="text-[11px] font-mono text-zinc-700 dark:text-zinc-300 block mb-1 font-semibold">${d.verifiedMetrics[0].label}</span>
+          <p class="text-lg font-extrabold tracking-tight">${d.verifiedMetrics[0].value}</p>
+          <p class="text-[11px] text-zinc-700 dark:text-zinc-300 mt-0.5">${d.verifiedMetrics[0].detail}</p>
+        </div>` : ''}
+      ${d.scopeCaveat ? `<p class="text-[11px] text-zinc-700 dark:text-zinc-300 italic pt-2 border-t border-zinc-100 dark:border-zinc-800">${d.scopeCaveat}</p>` : ''}
+      ${d.confirmationPlaceholder ? `
+        <div class="mt-3 p-2 rounded bg-amber-50 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-900/40 text-[10px] text-amber-800 dark:text-amber-300 flex items-start gap-1.5 font-mono">
+          <i data-lucide="circle-alert" class="w-3.5 h-3.5 shrink-0 mt-0.5 text-amber-600"></i><span>${d.confirmationPlaceholder}</span>
+        </div>` : ''}
+    </div>`).join('');
+}
+
+/* ================================================================
+   TIMELINE
+================================================================ */
+let timelineFilter = 'All';
+const timelineTabs = ["All","National Placement","Global Finalist","National Qualifier","Simulation Study"];
+function badgeClasses(c){
+  switch(c){
+    case 'amber':  return 'bg-amber-100 dark:bg-amber-950/70 text-amber-800 dark:text-amber-300 border-amber-300 dark:border-amber-800';
+    case 'sky': case 'cyan': return 'bg-sky-100 dark:bg-sky-950/70 text-sky-800 dark:text-sky-300 border-sky-300 dark:border-sky-800';
+    case 'orange': return 'bg-orange-100 dark:bg-orange-950/70 text-orange-800 dark:text-orange-300 border-orange-300 dark:border-orange-800';
+    case 'emerald':return 'bg-emerald-100 dark:bg-emerald-950/70 text-emerald-800 dark:text-emerald-300 border-emerald-300 dark:border-emerald-800';
+    default:       return 'bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 border-zinc-200 dark:border-zinc-700';
+  }
+}
+function renderTimelineTabs(){
+  document.getElementById('timelineTabs').innerHTML = timelineTabs.map(t =>
+    `<button onclick="setTimelineFilter('${t}')" class="text-xs font-mono px-3 py-1.5 rounded-md transition-colors ${
+      timelineFilter===t ? 'tab-on font-medium' : 'bg-zinc-100 dark:bg-zinc-850 text-zinc-700 dark:text-zinc-300 hover:bg-zinc-200 dark:hover:bg-zinc-800'}">${t}</button>`).join('');
+}
+function setTimelineFilter(f){ timelineFilter = f; renderTimelineTabs(); renderTimeline(); }
+function renderTimeline(){
+  const list = timelineFilter === 'All' ? timelineData
+    : timelineData.filter(t => t.stage.toLowerCase().includes(timelineFilter.toLowerCase()));
+  document.getElementById('timelineList').innerHTML = list.map(t => `
+    <div class="relative group fade-in">
+      <div class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-white dark:bg-zinc-950 border-2 border-amber-500 group-hover:scale-125 transition-transform" style="left:-31px"></div>
+      <div class="editorial-card rounded-xl p-5 sm:p-6 subtle-border">
+        <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+          <div class="flex items-center gap-2 flex-wrap">
+            <span class="text-xs font-mono font-bold text-amber-800 dark:text-amber-400">${t.date}</span>
+            <span class="text-zinc-400 dark:text-zinc-600">•</span>
+            <span class="text-xs font-mono text-zinc-700 dark:text-zinc-300">${t.category}</span>
+          </div>
+          <span class="text-[11px] font-mono px-2 py-0.5 rounded border ${badgeClasses(t.badgeColor)}">${t.stage}</span>
+        </div>
+        <h3 class="text-base sm:text-lg font-bold mb-2">${t.title}</h3>
+        <p class="text-xs sm:text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed mb-3">${t.description}</p>
+        <div class="pt-2.5 border-t border-zinc-100 dark:border-zinc-800/80 text-xs text-zinc-700 dark:text-zinc-300 flex items-start gap-1.5">
+          <strong class="text-zinc-900 dark:text-zinc-100 font-mono text-[11px] shrink-0">Takeaway:</strong>
+          <span class="italic">${t.significance}</span>
+        </div>
+      </div>
+    </div>`).join('');
+}
+
+/* ================================================================
+   SKILLS
+================================================================ */
+function skillsIcon(cat){
+  if (cat.includes('Embedded')) return `<i data-lucide="cpu" class="w-4 h-4 text-amber-500"></i>`;
+  if (cat.includes('Data')) return `<i data-lucide="terminal" class="w-4 h-4 text-sky-500"></i>`;
+  if (cat.includes('Research')) return `<i data-lucide="book-open" class="w-4 h-4 text-emerald-500"></i>`;
+  return `<i data-lucide="users" class="w-4 h-4 text-purple-500"></i>`;
+}
+function renderSkills(){
+  document.getElementById('skillsGrid').innerHTML = skillsData.map(s => `
+    <div class="editorial-card rounded-xl p-6 subtle-border text-left">
+      <div class="flex items-center gap-2.5 mb-3 pb-3 border-b border-zinc-100 dark:border-zinc-800">
+        <div class="p-1.5 rounded-md bg-zinc-100 dark:bg-zinc-800">${skillsIcon(s.category)}</div>
+        <h3 class="text-base font-bold">${s.category}</h3>
+      </div>
+      <p class="text-xs text-zinc-700 dark:text-zinc-300 mb-4 leading-relaxed">${s.description}</p>
+      <div class="space-y-3">
+        ${s.skills.map(k => `
+          <div class="p-3 rounded-lg bg-zinc-50/70 dark:bg-zinc-950/40 subtle-border">
+            <div class="flex items-center justify-between gap-2 mb-1">
+              <span class="text-xs font-mono font-bold text-zinc-900 dark:text-zinc-100">${k.name}</span>
+              <span class="text-[10px] font-mono px-1.5 py-0.5 rounded bg-zinc-200/60 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300">Applied</span>
+            </div>
+            <p class="text-xs text-zinc-700 dark:text-zinc-300 leading-relaxed">${k.context}</p>
+          </div>`).join('')}
+      </div>
+    </div>`).join('');
+}
+
+/* ================================================================
+   EVIDENCE
+================================================================ */
+let evidenceFilter = 'all';
+const evidenceTabs = [
+  {id:"all",label:"All Evidence"},{id:"research",label:"Research & Posters"},
+  {id:"academic",label:"Academic Verification"},{id:"presentation",label:"Presentations & Fairs"},
+  {id:"educational",label:"Educational Platforms"},{id:"certificates",label:"Certificates & Finalists"}
+];
+let redactionOn = true;
+function renderEvidenceTabs(){
+  document.getElementById('evidenceTabs').innerHTML = evidenceTabs.map(t =>
+    `<button onclick="setEvidenceFilter('${t.id}')" class="text-xs font-mono px-3 py-1.5 rounded-md transition-colors ${
+      evidenceFilter===t.id ? 'tab-on font-medium' : 'bg-zinc-100 dark:bg-zinc-850 text-zinc-700 dark:text-zinc-300 hover:bg-zinc-200 dark:hover:bg-zinc-800'}">${t.label}</button>`).join('');
+}
+function setEvidenceFilter(f){ evidenceFilter = f; renderEvidenceTabs(); renderEvidence(); }
+function renderEvidence(){
+  const list = evidenceFilter === 'all' ? evidenceData : evidenceData.filter(e => e.category === evidenceFilter);
+  document.getElementById('evidenceGrid').innerHTML = list.map(g => `
+    <div class="editorial-card rounded-xl overflow-hidden flex flex-col justify-between hover:border-zinc-300 dark:hover:border-zinc-700 transition-all text-left group">
+      <div>
+        <div class="aspect-[16/10] bg-zinc-100 dark:bg-zinc-950/80 relative flex items-center justify-center overflow-hidden cursor-pointer" onclick="openEvidenceModal('${g.id}')">
+          ${g.previewImage
+            ? `<img src="${g.previewImage}" alt="${g.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />`
+            : g.fileType==='pdf'
+              ? `<div class="flex flex-col items-center text-zinc-600 dark:text-zinc-400"><i data-lucide="file-text" class="w-10 h-10 text-amber-600/80 mb-2"></i><span class="text-[11px] font-mono">Official PDF Document</span></div>`
+              : g.fileType==='external-link'
+                ? `<div class="flex flex-col items-center text-zinc-600 dark:text-zinc-400"><i data-lucide="external-link" class="w-10 h-10 text-sky-600/80 mb-2"></i><span class="text-[11px] font-mono">Live Web Deployment</span></div>`
+                : `<div class="flex flex-col items-center text-zinc-600 dark:text-zinc-400"><i data-lucide="lock" class="w-8 h-8 text-zinc-600 mb-2"></i><span class="text-[11px] font-mono">Pending Physical Archive</span></div>`}
+          ${g.requiresRedaction ? `
+            <span class="absolute top-2.5 right-2.5 text-[10px] font-mono px-2 py-0.5 rounded bg-zinc-950/80 text-amber-300 backdrop-blur border border-amber-500/30 flex items-center gap-1">
+              <i data-lucide="shield-check" class="w-3 h-3"></i><span>Privacy Redacted</span>
+            </span>` : ''}
+          <span class="absolute bottom-2.5 left-2.5 text-[10px] font-mono px-2 py-0.5 rounded bg-zinc-950/80 text-white backdrop-blur">${g.categoryLabel}</span>
+        </div>
+        <div class="p-5">
+          <div class="flex items-center justify-between text-[11px] font-mono text-zinc-600 dark:text-zinc-400 mb-1.5">
+            <span>${g.organization}</span><span>${g.date}</span>
+          </div>
+          <h3 class="text-sm font-bold mb-3 group-hover:text-amber-800 dark:group-hover:text-amber-400 transition-colors">${g.title}</h3>
+          <div class="p-3 rounded-lg bg-zinc-50 dark:bg-zinc-950/60 subtle-border mb-3">
+            <span class="text-[10px] font-mono font-bold text-emerald-800 dark:text-emerald-400 uppercase tracking-wider block mb-1">Verifiable Scope:</span>
+            <p class="text-xs text-zinc-700 dark:text-zinc-300 leading-relaxed">${g.whatItProves}</p>
+          </div>
+        </div>
+      </div>
+      <div class="p-5 pt-0 flex items-center justify-between border-t border-zinc-100 dark:border-zinc-850">
+        <button onclick="openEvidenceModal('${g.id}')" class="text-xs font-semibold text-amber-800 dark:text-amber-400 hover:text-amber-900 dark:hover:text-amber-300 transition-colors flex items-center gap-1">
+          <span>Inspect Document</span><i data-lucide="external-link" class="w-3 h-3"></i>
+        </button>
+        ${g.fileUrl ? `<a href="${g.fileUrl}" target="_blank" rel="noopener noreferrer" class="text-[11px] font-mono text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-200">Direct Link ↗</a>` : ''}
+      </div>
+    </div>`).join('');
+  lucide.createIcons();
+}
+function openEvidenceById(id){
+  const item = evidenceData.find(e => e.id === id);
+  if (item) openEvidenceModal(id);
+}
+function evidenceBodyHtml(g){
+  if (g.fileUrl && g.fileType === 'pdf'){
+    return `
+      <div class="w-full flex flex-col items-center">
+        <div class="w-full h-[480px] rounded-lg overflow-hidden border border-zinc-200 dark:border-zinc-800 bg-white relative">
+          <iframe src="${g.fileUrl}#toolbar=0" title="${g.title}" class="w-full h-full"></iframe>
+          ${g.requiresRedaction && redactionOn ? `
+            <div class="absolute inset-0 pointer-events-none flex flex-col justify-between p-6">
+              <div class="p-3 rounded bg-zinc-950/80 backdrop-blur text-amber-300 text-xs font-mono max-w-md mx-auto pointer-events-auto border border-amber-500/40 shadow-lg text-center">
+                <i data-lucide="shield-alert" class="w-4 h-4 inline mr-1.5 text-amber-400"></i>
+                <span>Civil Birthdate & Tuition records automatically masked for public privacy.</span>
+              </div>
+            </div>` : ''}
+        </div>
+      </div>`;
+  }
+  if (g.fileUrl && g.fileType === 'image'){
+    return `
+      <div class="relative max-w-full max-h-[500px] rounded-lg overflow-hidden border border-zinc-200 dark:border-zinc-800 bg-white mx-auto">
+        <img src="${g.fileUrl}" alt="${g.title}" class="max-h-[480px] w-auto object-contain mx-auto" />
+        ${g.requiresRedaction && redactionOn ? `
+          <div class="absolute top-4 left-4 right-4 p-2.5 rounded bg-zinc-950/85 backdrop-blur text-amber-300 text-xs font-mono border border-amber-500/40 text-center">
+            <i data-lucide="shield-alert" class="w-3.5 h-3.5 inline mr-1"></i>
+            <span>Seating number and Civil Registry ID redacted.</span>
+          </div>` : ''}
+      </div>`;
+  }
+  if (g.fileType === 'external-link'){
+    return `
+      <div class="p-8 text-center max-w-md mx-auto">
+        <div class="w-12 h-12 rounded-full bg-amber-100 dark:bg-amber-950/60 text-amber-800 dark:text-amber-400 flex items-center justify-center mx-auto mb-4">
+          <i data-lucide="external-link" class="w-6 h-6"></i>
+        </div>
+        <h4 class="text-base font-bold mb-2">External Educational Platform</h4>
+        <p class="text-xs text-zinc-700 dark:text-zinc-300 mb-4 leading-relaxed">This item points to the deployed student platform hosted live on Netlify.</p>
+        <a href="${g.fileUrl}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-950 text-xs font-medium hover:bg-zinc-800 transition-colors">
+          <span>Launch ${g.title}</span><i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+        </a>
+      </div>`;
+  }
+  return `
+    <div class="p-8 text-center max-w-md mx-auto">
+      <div class="w-12 h-12 rounded-full bg-zinc-200 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 flex items-center justify-center mx-auto mb-4">
+        <i data-lucide="file-text" class="w-6 h-6"></i>
+      </div>
+      <h4 class="text-base font-bold mb-2">Document Archived Pending Release</h4>
+      <p class="text-xs text-zinc-700 dark:text-zinc-300 mb-4 leading-relaxed">Official certificate is being indexed and will be uploaded directly upon physical release by the awarding body.</p>
+      <span class="text-xs font-mono px-2.5 py-1 rounded bg-amber-100 dark:bg-amber-950 text-amber-800 dark:text-amber-300">Status: Pending Upload</span>
+    </div>`;
+}
+function openEvidenceModal(id){
+  const g = evidenceData.find(e => e.id === id);
+  redactionOn = true;
+  document.getElementById('evidenceModalContent').innerHTML = `
+    <div class="p-4 sm:p-5 border-b border-zinc-200 dark:border-zinc-800 flex items-start justify-between gap-4 shrink-0">
+      <div>
+        <div class="flex items-center gap-2 mb-1 flex-wrap">
+          <span class="text-xs font-mono uppercase tracking-wider text-amber-800 dark:text-amber-400 font-bold">${g.categoryLabel}</span>
+          <span class="text-xs font-mono text-zinc-600 dark:text-zinc-400">•</span>
+          <span class="text-xs font-mono text-zinc-700 dark:text-zinc-300">${g.date}</span>
+        </div>
+        <h3 class="text-lg sm:text-xl font-bold">${g.title}</h3>
+        <p class="text-xs font-medium text-zinc-700 dark:text-zinc-300">Issuing Organization: ${g.organization}</p>
+      </div>
+      <div class="flex items-center gap-2 shrink-0">
+        ${g.requiresRedaction ? `
+          <button onclick="toggleRedaction()" class="flex items-center gap-1.5 px-2.5 py-1.5 rounded-md text-xs font-mono transition-colors ${redactionOn
+            ? 'bg-amber-100 dark:bg-amber-950 text-amber-800 dark:text-amber-300 border border-amber-300 dark:border-amber-800'
+            : 'bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300'}" title="Toggle privacy redaction for personal IDs" id="redactionBtn">
+            <i data-lucide="eye-off" class="w-3.5 h-3.5 text-amber-600"></i><span>Privacy Redacted: ON</span>
+          </button>` : ''}
+        <button onclick="closeEvidenceModal()" class="p-1.5 rounded-lg text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 hover:bg-zinc-100 dark:hover:bg-zinc-800" aria-label="Close document modal">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+    </div>
+    <div class="flex-1 overflow-y-auto p-4 sm:p-6 bg-zinc-100/70 dark:bg-zinc-950/70 flex flex-col items-center justify-center min-h-[340px]" id="evidenceViewer">${evidenceBodyHtml(g)}</div>
+    <div class="p-4 sm:p-5 bg-white dark:bg-zinc-900 border-t border-zinc-200 dark:border-zinc-800 space-y-2 shrink-0">
+      <div class="p-3 rounded-lg bg-emerald-50/60 dark:bg-emerald-950/20 border border-emerald-200/60 dark:border-emerald-800/40 text-left">
+        <span class="text-[11px] font-mono text-emerald-800 dark:text-emerald-300 font-bold uppercase tracking-wider block mb-0.5">✓ What this document verifies:</span>
+        <p class="text-xs text-zinc-700 dark:text-zinc-300 leading-relaxed">${g.whatItProves}</p>
+      </div>
+      <div class="p-3 rounded-lg bg-zinc-50 dark:bg-zinc-950/50 subtle-border text-left">
+        <span class="text-[11px] font-mono text-zinc-700 dark:text-zinc-300 font-bold uppercase tracking-wider block mb-0.5">⚠ Strict Boundary (What this does NOT prove):</span>
+        <p class="text-xs text-zinc-700 dark:text-zinc-300 leading-relaxed italic">${g.whatItDoesNotProve}</p>
+      </div>
+    </div>`;
+  document.getElementById('evidenceOverlay').classList.remove('hidden-anim');
+  document.body.style.overflow = 'hidden';
+  lucide.createIcons();
+}
+function toggleRedaction(){
+  redactionOn = !redactionOn;
+  const btn = document.getElementById('redactionBtn');
+  if (btn){
+    btn.className = `flex items-center gap-1.5 px-2.5 py-1.5 rounded-md text-xs font-mono transition-colors ${redactionOn
+      ? 'bg-amber-100 dark:bg-amber-950 text-amber-800 dark:text-amber-300 border border-amber-300 dark:border-amber-800'
+      : 'bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300'}`;
+    btn.innerHTML = redactionOn
+      ? `<i data-lucide="eye-off" class="w-3.5 h-3.5 text-amber-600"></i><span>Privacy Redacted: ON</span>`
+      : `<i data-lucide="eye" class="w-3.5 h-3.5"></i><span>Redaction: OFF</span>`;
+  }
+  // re-render viewer for the currently open item
+  const overlay = document.getElementById('evidenceOverlay');
+  const title = overlay.querySelector('h3');
+  const item = evidenceData.find(e => e.title === title.textContent);
+  if (item) document.getElementById('evidenceViewer').innerHTML = evidenceBodyHtml(item);
+  lucide.createIcons();
+}
+function closeEvidenceModal(){
+  document.getElementById('evidenceOverlay').classList.add('hidden-anim');
+  document.body.style.overflow = '';
+}
+
+/* ================================================================
+   REVIEW DRAWER
+================================================================ */
+function renderDrawer(){
+  document.getElementById('drawerContent').innerHTML = `
+    <div class="p-4 rounded-xl bg-zinc-50 dark:bg-zinc-950/60 subtle-border mb-6 space-y-2">
+      <p class="text-xs text-zinc-700 dark:text-zinc-300 leading-relaxed">
+        Prepared specifically for academic evaluation committees, international high school program admissions, and research mentors.
+        Every claim has been cross-referenced against primary documentation.
+      </p>
+      <div class="grid grid-cols-3 gap-2 pt-2 border-t border-zinc-200/60 dark:border-zinc-800 text-center font-mono">
+        <div class="p-2 rounded bg-white dark:bg-zinc-900 subtle-border">
+          <span class="text-xs font-bold text-emerald-800 dark:text-emerald-300">8</span>
+          <p class="text-[10px] text-zinc-700 dark:text-zinc-300">Verified</p>
+        </div>
+        <div class="p-2 rounded bg-white dark:bg-zinc-900 subtle-border">
+          <span class="text-xs font-bold text-amber-800 dark:text-amber-300">5</span>
+          <p class="text-[10px] text-zinc-700 dark:text-zinc-300">Boundaries</p>
+        </div>
+        <div class="p-2 rounded bg-white dark:bg-zinc-900 subtle-border">
+          <span class="text-xs font-bold text-sky-800 dark:text-sky-300">5</span>
+          <p class="text-[10px] text-zinc-700 dark:text-zinc-300">Pending</p>
+        </div>
+      </div>
+    </div>
+    <div class="mb-6">
+      <h4 class="text-xs font-mono uppercase tracking-wider text-emerald-800 dark:text-emerald-300 font-bold mb-3 flex items-center gap-1.5">
+        <i data-lucide="circle-check" class="w-4 h-4 text-emerald-600 dark:text-emerald-400"></i>1. Verified Academic & Research Claims
+      </h4>
+      <div class="space-y-2">
+        ${drawerVerified.map(w => `
+          <div class="p-2.5 rounded-lg bg-zinc-50 dark:bg-zinc-950/40 subtle-border text-xs">
+            <div class="flex items-center justify-between gap-2 mb-0.5">
+              <span class="font-bold text-zinc-900 dark:text-zinc-100">${w.claim}</span>
+              <span class="text-[10px] font-mono text-emerald-800 dark:text-emerald-300 shrink-0 font-medium">${w.status}</span>
+            </div>
+            <p class="text-[11px] text-zinc-700 dark:text-zinc-300 italic">${w.source}</p>
+          </div>`).join('')}
+      </div>
+    </div>
+    <div class="mb-6">
+      <h4 class="text-xs font-mono uppercase tracking-wider text-amber-800 dark:text-amber-300 font-bold mb-3 flex items-center gap-1.5">
+        <i data-lucide="triangle-alert" class="w-4 h-4 text-amber-600 dark:text-amber-400"></i>2. Research Limitations & Prototype Scope
+      </h4>
+      <div class="space-y-2">
+        ${drawerBoundaries.map(w => `
+          <div class="p-2.5 rounded-lg bg-amber-50/50 dark:bg-amber-950/20 border border-amber-200/60 dark:border-amber-800/40 text-xs">
+            <span class="font-mono font-bold text-amber-800 dark:text-amber-300">${w.project}: </span>
+            <span class="text-zinc-700 dark:text-zinc-300">${w.boundary}</span>
+          </div>`).join('')}
+      </div>
+    </div>
+    <div class="mb-6">
+      <h4 class="text-xs font-mono uppercase tracking-wider text-sky-800 dark:text-sky-300 font-bold mb-3 flex items-center gap-1.5">
+        <i data-lucide="circle-help" class="w-4 h-4 text-sky-600 dark:text-sky-400"></i>3. Items Flagged for Student Confirmation
+      </h4>
+      <div class="space-y-2">
+        ${drawerPending.map(w => `
+          <div class="p-2.5 rounded-lg bg-zinc-50 dark:bg-zinc-950/40 subtle-border text-xs">
+            <p class="font-bold text-zinc-900 dark:text-zinc-100 mb-0.5">${w.item}</p>
+            <p class="text-[11px] text-zinc-700 dark:text-zinc-300">${w.detail}</p>
+          </div>`).join('')}
+      </div>
+    </div>
+    <div class="p-3.5 rounded-lg bg-emerald-50/50 dark:bg-emerald-950/20 border border-emerald-200 dark:border-emerald-800/40 text-xs text-zinc-700 dark:text-zinc-300">
+      <span class="font-mono font-bold text-emerald-800 dark:text-emerald-300 block mb-1">✓ Tone & Vocabulary Compliance:</span>
+      <p class="text-[11px] leading-relaxed">Zero instances of words such as "revolutionary", "visionary", "genius", or "transforming the future". All narratives are expressed in precise, concise high-school scientific and technical terminology.</p>
+    </div>`;
+}
+function openDrawer(){
+  document.getElementById('drawerOverlay').classList.remove('hidden-anim');
+  document.body.style.overflow = 'hidden';
+  lucide.createIcons();
+}
+function closeDrawer(){
+  document.getElementById('drawerOverlay').classList.add('hidden-anim');
+  document.body.style.overflow = '';
+}
+
+/* ================================================================
+   CONTACT
+================================================================ */
+function submitContact(e){
+  e.preventDefault();
+  document.getElementById('contactFormWrap').innerHTML = `
+    <div class="p-6 rounded-lg bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-800 text-center space-y-2">
+      <i data-lucide="circle-check" class="w-8 h-8 text-emerald-600 dark:text-emerald-400 mx-auto"></i>
+      <h4 class="text-sm font-bold text-zinc-900 dark:text-zinc-100">Note Prepared</h4>
+      <p class="text-xs text-zinc-700 dark:text-zinc-300 max-w-sm mx-auto leading-relaxed">
+        Thank you. You can also write directly via email at
+        <span class="font-mono text-amber-800 dark:text-amber-400 font-semibold">Mohamed.2625023@stemelmenya.moe.edu.eg</span>.
+      </p>
+      <button onclick="resetContact()" class="text-xs text-zinc-700 dark:text-zinc-300 underline pt-2">Send another note</button>
+    </div>`;
+  lucide.createIcons();
+  return false;
+}
+function resetContact(){
+  document.getElementById('contactFormWrap').innerHTML = `
+    <form onsubmit="return submitContact(event)" class="space-y-4">
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div>
+          <label class="block text-xs font-mono text-zinc-700 dark:text-zinc-300 font-semibold mb-1">Your Name / Institution</label>
+          <input type="text" required placeholder="e.g. Dr. / Program Reviewer" class="w-full text-xs p-2.5 rounded-md bg-zinc-50 dark:bg-zinc-950 subtle-border focus:outline-none focus:border-amber-500 text-zinc-900 dark:text-zinc-100" />
+        </div>
+        <div>
+          <label class="block text-xs font-mono text-zinc-700 dark:text-zinc-300 font-semibold mb-1">Your Contact Email</label>
+          <input type="email" required placeholder="reviewer@institution.edu" class="w-full text-xs p-2.5 rounded-md bg-zinc-50 dark:bg-zinc-950 subtle-border focus:outline-none focus:border-amber-500 text-zinc-900 dark:text-zinc-100" />
+        </div>
+      </div>
+      <div>
+        <label class="block text-xs font-mono text-zinc-700 dark:text-zinc-300 font-semibold mb-1">Subject</label>
+        <input type="text" required placeholder="e.g. Research inquiry / Program evaluation" class="w-full text-xs p-2.5 rounded-md bg-zinc-50 dark:bg-zinc-950 subtle-border focus:outline-none focus:border-amber-500 text-zinc-900 dark:text-zinc-100" />
+      </div>
+      <div>
+        <label class="block text-xs font-mono text-zinc-700 dark:text-zinc-300 font-semibold mb-1">Message</label>
+        <textarea rows="4" required placeholder="Write your message or inquiry here..." class="w-full text-xs p-2.5 rounded-md bg-zinc-50 dark:bg-zinc-950 subtle-border focus:outline-none focus:border-amber-500 text-zinc-900 dark:text-zinc-100 leading-relaxed"></textarea>
+      </div>
+      <button type="submit" class="inline-flex items-center justify-center gap-2 w-full py-2.5 rounded-md bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-950 text-xs font-medium hover:bg-zinc-800 dark:hover:bg-zinc-200 transition-colors">
+        <i data-lucide="send" class="w-3.5 h-3.5"></i><span>Send Academic Inquiry</span>
+      </button>
+    </form>`;
+  lucide.createIcons();
+}
+
+/* ================================================================
+   KEYBOARD + INIT
+================================================================ */
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape'){ closeProjectModal(); closeEvidenceModal(); closeDrawer(); }
+});
+
+renderNav(); renderHeroChips();
+renderProjectTabs(); renderProjects();
+renderAwards(); renderLeadership();
+renderTimelineTabs(); renderTimeline();
+renderSkills();
+renderEvidenceTabs(); renderEvidence();
+renderDrawer();
+lucide.createIcons();
+</script>
+</body>
+</html>
