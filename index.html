@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Mohamed Emad - Student Researcher | Embedded Systems & AI</title>
 <meta name="description" content="Student research and engineering portfolio of Mohamed Emad, Grade 11 at El Minya STEM School, Egypt." />
-<link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+<link rel="icon" type="image/svg+xml" href="favicon.svg" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -137,7 +137,7 @@ tailwind.config = {
         <div class="relative w-full max-w-sm">
           <div class="relative p-2 rounded-xl bg-white dark:bg-zinc-900 subtle-border shadow-md">
             <div class="aspect-[3/4] rounded-lg overflow-hidden relative bg-zinc-100 dark:bg-zinc-800">
-              <img src="assets/mohamed-emad.jpg" alt="Mohamed Emad, Grade 11 student at El Minya STEM School" class="w-full h-full object-cover object-top" style="filter:contrast(1.02)" loading="eager" />
+              <img src="mohamed-emad.jpg" alt="Mohamed Emad, Grade 11 student at El Minya STEM School" class="w-full h-full object-cover object-top" style="filter:contrast(1.02)" loading="eager" />
               <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/40 via-transparent to-transparent pointer-events-none"></div>
               <div class="absolute bottom-3 left-3 right-3 p-2.5 rounded-md bg-zinc-950/80 backdrop-blur-md border border-white/10 text-white flex items-center justify-between">
                 <div><p class="text-xs font-semibold tracking-tight">Mohamed Emad</p><p class="text-[10px] text-zinc-300">Class of 2028 • El Minya STEM</p></div>
@@ -297,7 +297,7 @@ tailwind.config = {
       <div class="lg:col-span-5 space-y-4">
         <div class="editorial-card rounded-xl overflow-hidden subtle-border shadow-xs text-left">
           <div class="aspect-[4/3] bg-zinc-100 dark:bg-zinc-800 overflow-hidden relative">
-            <img src="assets/mohamed-campus.jpg" alt="Mohamed Emad on campus" class="w-full h-full object-cover" />
+            <img src="mohamed-campus.jpg" alt="Mohamed Emad on campus" class="w-full h-full object-cover" />
           </div>
           <div class="p-4 bg-white dark:bg-zinc-900">
             <p class="text-xs font-bold text-zinc-900 dark:text-zinc-100">STEM Campus Environment</p>
@@ -474,7 +474,7 @@ const projectsData = [
     id:"gulp", title:"GULP", subtitle:"Swallowing Measurement Reliability via Wearable Sensors",
     field:"Embedded Systems & Signal Processing", statusBadge:"Research & Prototype Development", statusType:"ongoing",
     summary:"Investigating whether acquisition-related variability in wearable swallowing sensors can be distinguished from natural physiological variability to automate measurement validity.",
-    featured:true, bannerImage:"assets/mohamed-campus.jpg",
+    featured:true, bannerImage:"mohamed-campus.jpg",
     tags:["Signal Processing","Sensor Reliability","Scientific Methodology","EISTEF Finalist"],
     problem:"Wearable acoustic and mechanical sensors offer a non-invasive way to monitor swallowing biomechanics. However, acquisition variability caused by sensor displacement, skin impedance changes, or user motion often contaminates readings, making it difficult to distinguish true physiological variation from measurement artifact.",
     researchQuestion:"Can sensor acquisition variability be mathematically separated from natural physiological swallowing variability, and can this distinction support an automated decision algorithm to accept or repeat a clinical measurement?",
@@ -492,7 +492,7 @@ const projectsData = [
     id:"basira", title:"BASIRA", subtitle:"Chest-Worn Assistive Navigation for Visual Impairment",
     field:"Assistive Technology & Embedded Systems", statusBadge:"IEEE YESIST12 Global Finalist (Top 5%)", statusType:"finalist",
     summary:"A hands-free, chest-worn embedded assistive unit providing obstacle alerts and orientation feedback through earpiece audio rather than external speakers or canes.",
-    featured:true, bannerImage:"assets/mohamed-emad.jpg",
+    featured:true, bannerImage:"mohamed-emad.jpg",
     tags:["ESP32","Ultrasonic Sensing","MPU6050","IEEE YESIST12","Assistive Tech"],
     problem:"Traditional mobility aids like long white canes require continuous arm exertion and cannot detect head-level or chest-level hazards. Furthermore, handheld devices with loud external speakers compromise user privacy and obscure critical ambient sounds.",
     researchQuestion:"How can a lightweight, chest-worn sensor node provide intuitive, low-latency obstacle perception and emergency communication without impeding natural hearing or requiring continuous manual handling?",
@@ -510,7 +510,7 @@ const projectsData = [
     id:"optiway", title:"OptiWay", subtitle:"AI-Based Urban Traffic Optimization & Emergency Routing",
     field:"Intelligent Transportation & Simulation", statusBadge:"School ISEF Research Fair Presentation", statusType:"completed",
     summary:"A traffic simulation study testing collective routing algorithms in SUMO to mitigate selfish navigation and establish dynamic emergency corridors for ambulances.",
-    featured:true, bannerImage:"assets/mohamed-isef.jpg",
+    featured:true, bannerImage:"mohamed-isef.jpg",
     tags:["SUMO 1.17","Python 3.11","NumPy & SciPy","Traffic Simulation","ISEF Fair"],
     problem:"Commercial navigation apps optimize for individual vehicles in isolation. This phenomenon ('selfish routing') funnels thousands of drivers into identical streets, worsening citywide congestion and trapping emergency ambulances where minutes dictate survival rates.",
     researchQuestion:"Can multi-agent collective traffic coordination algorithms modeled on Egyptian urban layouts reduce mean travel duration and establish prioritized green corridors for verified emergency vehicles?",
@@ -523,15 +523,15 @@ const projectsData = [
     limitations:"OptiWay's findings are based on computer simulations in SUMO and mathematical models, not physical road sensor networks or municipal fleet deployments.",
     nextSteps:["Calibrating simulation parameters with physical camera telemetry from local intersections","Exploring low-bandwidth SMS/cellular gateway protocols for emergency vehicle authentication","Comparing multi-agent reinforcement learning routing against static Dijkstra algorithms"],
     evidence:[
-      {title:"Official OptiWay Research Poster (Full PDF)",type:"Scientific Research Poster",file:"assets/FinalIseff.pdf",note:"Complete scientific poster presented at El Minya STEM School ISEF fair."},
-      {title:"Fair Presentation Photograph",type:"Event Evidence",file:"assets/mohamed-isef.jpg",note:"Mohamed presenting OptiWay at El Minya STEM School ISEF fair."}
+      {title:"Official OptiWay Research Poster (Full PDF)",type:"Scientific Research Poster",file:"FinalIseff.pdf",note:"Complete scientific poster presented at El Minya STEM School ISEF fair."},
+      {title:"Fair Presentation Photograph",type:"Event Evidence",file:"mohamed-isef.jpg",note:"Mohamed presenting OptiWay at El Minya STEM School ISEF fair."}
     ]
   },
   {
     id:"aquapulse", title:"AquaPulse", subtitle:"Post-Treatment Rural Drinking Water Early Warning Network",
     field:"Environmental Sensing & Water Quality", statusBadge:"GHLC Finalist", statusType:"finalist",
     summary:"Exploring continuous multi-parameter sensor nodes to detect post-treatment water contamination in rural pipeline networks before water reaches household taps.",
-    featured:true, bannerImage:"assets/mohamed-campus.jpg",
+    featured:true, bannerImage:"mohamed-campus.jpg",
     tags:["ESP32","Water Quality","pH & Turbidity","GHLC Finalist","Environmental"],
     problem:"In many rural areas, drinking water may be purified adequately at a central treatment facility but suffers contamination during transit through aged or compromised distribution piping before reaching residential taps.",
     researchQuestion:"Can an array of distributed, low-cost sensor nodes placed along distribution pipes reliably detect sudden anomalies in pH, turbidity, and conductivity to alert village stakeholders prior to widespread consumption?",
@@ -585,20 +585,20 @@ const projectsData = [
 
 const evidenceData = [
   { id:"optiway-poster-pdf", title:"OptiWay Scientific Research Poster", category:"research", categoryLabel:"Research Poster",
-    date:"Late 2025", organization:"El Minya STEM School ISEF Fair", fileUrl:"assets/FinalIseff.pdf", previewImage:"assets/mohamed-isef.jpg", fileType:"pdf",
+    date:"Late 2025", organization:"El Minya STEM School ISEF Fair", fileUrl:"FinalIseff.pdf", previewImage:"mohamed-isef.jpg", fileType:"pdf",
     whatItProves:"Confirms authoring and defense of the quantitative traffic simulation study using SUMO 1.17 and Python 3.11 for New Minya City road networks.",
     whatItDoesNotProve:"Does not prove physical road sensor network deployment or municipal city-wide adoption.", requiresRedaction:false, status:"verified" },
   { id:"stem-enrollment-document", title:"Official El Minya STEM School Enrollment Certificate", category:"academic", categoryLabel:"Academic Verification",
-    date:"June 2026", organization:"Ministry of Education — Central Unit for Gifted and Talented", fileUrl:null, previewImage:"assets/stem-entrance.jpg", fileType:"image",
+    date:"June 2026", organization:"Ministry of Education — Central Unit for Gifted and Talented", fileUrl:null, previewImage:"stem-entrance.jpg", fileType:"image",
     whatItProves:"Officially certifies Mohamed Emad Mohamed Ibrahim's regular enrollment at El Minya STEM School (first grade 2025/2026, advancing to second grade 2026/2027).",
     whatItDoesNotProve:"Does not represent high school graduation completion or standardized test results.", requiresRedaction:true,
     redactionNotice:"This document contains civil birthdate records and fee receipts. Click 'Redaction Mode' to view the privacy-safe display.", status:"verified" },
   { id:"isef-defense-photo", title:"In-Person Poster Defense — El Minya STEM Fair", category:"presentation", categoryLabel:"Fair Presentation",
-    date:"December 2025", organization:"El Minya STEM School ISEF Fair", fileUrl:"assets/mohamed-isef.jpg", previewImage:"assets/mohamed-isef.jpg", fileType:"image",
+    date:"December 2025", organization:"El Minya STEM School ISEF Fair", fileUrl:"mohamed-isef.jpg", previewImage:"mohamed-isef.jpg", fileType:"image",
     whatItProves:"Verifies in-person participation and verbal defense of the OptiWay research project before the school judging committee.",
     whatItDoesNotProve:"Does not indicate selection or travel to the Regeneron International Science & Engineering Fair (ISEF) in the United States.", requiresRedaction:false, status:"verified" },
   { id:"prep-graduation-cert", title:"Preparatory School Completion Examination Certificate", category:"academic", categoryLabel:"Academic Verification",
-    date:"2024 / 2025", organization:"Ministry of Education & Minya Governorate Directorate", fileUrl:"assets/EngTranscript.pdf", previewImage:null, fileType:"pdf",
+    date:"2024 / 2025", organization:"Ministry of Education & Minya Governorate Directorate", fileUrl:"EngTranscript.pdf", previewImage:null, fileType:"pdf",
     whatItProves:"Certifies completion of basic preparatory education with an overall score of 268.5 / 280 (95.9% Excellent rating), fulfilling academic admission prerequisites for STEM school entry.",
     whatItDoesNotProve:"Does not reflect high school STEM capstone grades or secondary diploma marks.", requiresRedaction:true,
     redactionNotice:"Contains national seating number and civil registration ID. Redaction mask applied.", status:"verified" },
